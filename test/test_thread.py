@@ -1,15 +1,34 @@
-import pandas
+"""
+Tests for Thread class
+"""
+
 from thread import Thread
+import pandas
 
-thread1_data = pandas.read_csv('data/test_thread1.csv')
-thread1 = Thread(thread1_data)
+THREAD1_DATA = pandas.read_csv('data/test_thread1.csv')
+THREAD1 = Thread(THREAD1_DATA)
 
-def test_graph_data():
-    assert dict(thread1.data) == {
-        'authors': 2,
-        'depth': 4,
-        'in_degree': 0.8,
-        'star_nodes': 0,
-        'emails': 4,
-        'thread': 149519831100002,
-    }
+THREAD2_DATA = pandas.read_csv('data/test_thread2.csv')
+THREAD2 = Thread(THREAD2_DATA)
+
+
+class TestGraphData(object):
+    def test_thread1(self):
+        assert dict(THREAD1.data) == {
+            'authors': 2,
+            'depth': 4,
+            'in_degree': 0.8,
+            'star_nodes': 0,
+            'emails': 4,
+            'thread': 149519831100002,
+        }
+
+    def test_thread2(self):
+        assert dict(THREAD2.data) == {
+            'authors': 4,
+            'depth': 7,
+            'in_degree': 0.93,
+            'star_nodes': 3,
+            'emails': 15,
+            'thread': 111896264700001,
+        }

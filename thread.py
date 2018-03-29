@@ -52,7 +52,7 @@ class Thread(object):
             self.emails.shape[0],
             len(self.emails.from_name.unique()),
             nx.dag_longest_path_length(self.graph),
-            nmp.mean(degrees),
+            round(nmp.mean(degrees), 2),
             sum(d > 1 for d in degrees)
         ]
         result = OrderedDict(zip(self.cols, row))
