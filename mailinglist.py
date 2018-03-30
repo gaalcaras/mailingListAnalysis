@@ -3,6 +3,7 @@ Mailing List
 """
 
 from thread import Thread
+from tqdm import tqdm
 import pandas as pd
 
 def follow_thread(emails, first_msg_id):
@@ -46,10 +47,16 @@ class MailingList(object):
         emails = self.emails[['date', 'msg_id', 'in_reply_to']]
         emails = emails.set_index(['date'])
 
-        thread_start = emails[emails.in_reply_to.isnull()]
+        first_msgs = emails[emails.in_reply_to.isnull()]
+        first_msgs = tqdm(first_msgs.iterrows(),
+                          desc='Going through {} first messages'.format(len(first_msgs)))
 
-        for index, row in thread_start.iterrows():
-            emails_target = emails.loc[index:]
+        for index, row in first_msgs:
+            try:
+                emails_target = emails.loc[index:]
+            except KeyError:
+                emails_target = emails
+
             msg_id = row['msg_id']
 
             threads_ids = follow_thread(emails_target, msg_id)
@@ -59,11 +66,11 @@ class MailingList(object):
     def process_threads(self):
         "Process each thread as a Thread object"
 
-        thread_ids = self.emails.thread.unique()
+        thread_ids = self.emails.thread.dropna().unique()
         thread_df = pd.DataFrame(index=range(0, len(thread_ids)),
                                  columns=Thread.cols)
 
-        for i, thread_id in enumerate(thread_ids):
+        for i, thread_id in tqdm(enumerate(thread_ids), desc='Processing threads'):
             thread_emails = self.emails[self.emails.thread == thread_id]
             thread = Thread(thread_emails)
 
