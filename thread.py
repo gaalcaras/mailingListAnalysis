@@ -14,7 +14,7 @@ class Thread(object):
 
     """Email Thread"""
 
-    cols = ['thread', 'emails', 'authors', 'depth', 'in_degree', 'star_nodes']
+    cols = ['thread', 'emails', 'authors', 'duration', 'depth', 'in_degree', 'star_nodes']
 
     def __init__(self, data):
         self.emails = data
@@ -50,7 +50,8 @@ class Thread(object):
         row = [
             self.emails['thread'].tolist()[0],
             self.emails.shape[0],
-            len(self.emails.from_name.unique()),
+            len(self.emails.from_email.unique()),
+            max(self.emails.date) - min(self.emails.date),
             nx.dag_longest_path_length(self.graph),
             round(nmp.mean(degrees), 2),
             sum(d > 1 for d in degrees)
