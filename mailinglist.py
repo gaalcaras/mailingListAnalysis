@@ -9,10 +9,10 @@ import pandas as pd
 def follow_thread(emails, first_msg_id):
     """Follow email replies to rebuild threads
 
-    :emails: pandas dataframe
+    :emails: dict (key: msg_id, value: reply_to)
     :msg_id: first email msg_id
 
-    :returns: list of msg ids of the thread
+    :returns: dict (key: msg_id, value: first_msg_id)
     """
 
     thread_ids = [first_msg_id]
@@ -20,7 +20,7 @@ def follow_thread(emails, first_msg_id):
     def look_for_answers(msg_id):
         "Look recursively for emails that reply to msg_id"
 
-        answers = emails[emails.in_reply_to.isin(msg_id)].msg_id.tolist()
+        answers = [k for k, v in emails.items() if v in msg_id]
 
         if not answers:
             return
@@ -30,38 +30,37 @@ def follow_thread(emails, first_msg_id):
 
     look_for_answers([first_msg_id])
 
-    return thread_ids
+    return dict(map(lambda e: (e, first_msg_id), thread_ids))
 
 class MailingList(object):
 
     """Emails"""
 
     def __init__(self, filepath):
-        self.emails = pd.read_csv(filepath, parse_dates=['date'])
+        self.emails = pd.read_csv(filepath,
+                                  parse_dates=['date'],
+                                  infer_datetime_format=True)
         self.threads = pd.DataFrame()
         self._threads = dict()
 
     def make_threads(self):
-        "Recognize threads in the mailing list"
+        """Recognize threads in the mailing list by following replies, and adds
+        a new 'thread' column that contains the Message-ID of the first message
+        in the thread.
+        """
 
-        emails = self.emails[['date', 'msg_id', 'in_reply_to']]
-        emails = emails.set_index(['date'])
+        emails = self.emails[['msg_id', 'in_reply_to']]
+        ids = pd.Series(emails.in_reply_to.values, index=emails.msg_id).to_dict()
 
-        first_msgs = emails[emails.in_reply_to.isnull()]
-        first_msgs = tqdm(first_msgs.iterrows(),
-                          desc='Going through {} first messages'.format(len(first_msgs)))
+        # Get first messages (no In-Reply-To header)
+        first_msg_ids = [k for k, v in ids.items() if not isinstance(v, str)]
 
-        for index, row in first_msgs:
-            try:
-                emails_target = emails.loc[index:]
-            except KeyError:
-                emails_target = emails
+        thread = dict() # Key: Message-Id, Value: Thread-ID (first thread message ID)
 
-            msg_id = row['msg_id']
+        for msg_id in tqdm(first_msg_ids, desc='Reconstructing threads'):
+            thread.update(follow_thread(ids, msg_id))
 
-            threads_ids = follow_thread(emails_target, msg_id)
-
-            self.emails.loc[self.emails.msg_id.isin(threads_ids), 'thread'] = msg_id
+        self.emails['thread'] = self.emails.msg_id.map(thread)
 
     def process_threads(self):
         "Process each thread as a Thread object"
