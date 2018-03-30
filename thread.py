@@ -9,6 +9,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import numpy as nmp
 import pandas as pd
+import webbrowser
 
 class Thread(object):
 
@@ -80,3 +81,7 @@ class Thread(object):
     def graph_info(self):
         """Print graph info"""
         print(nx.info(self.graph))
+
+    def open(self):
+        """Open thread in web browser"""
+        webbrowser.open('https://public-inbox.org/git/' + self.emails['thread'].tolist()[0])
