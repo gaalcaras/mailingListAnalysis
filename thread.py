@@ -30,9 +30,9 @@ class Thread(object):
 
         :data: panda dataframe
         """
-        for row in data[['msg_id', 'from_name']].itertuples():
+        for row in data[['msg_id', 'from_email']].itertuples():
             self.graph.add_node(row.msg_id,
-                                author=row.from_name)
+                                author=row.from_email)
 
         edges = data[['msg_id', 'in_reply_to']].dropna().values.tolist()
         self.graph.add_edges_from(edges)
@@ -70,7 +70,7 @@ class Thread(object):
         # Colors
         cmap = plt.get_cmap('viridis')
         color = cmap(nmp.linspace(0, 1, self.data['authors']))
-        color_d = dict(zip(self.emails.from_name.unique(), color))
+        color_d = dict(zip(self.emails.from_email.unique(), color))
         author_seq = nx.get_node_attributes(self.graph, 'author').values()
         color_seq = [color_d[n] for n in author_seq]
 
