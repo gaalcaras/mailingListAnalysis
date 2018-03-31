@@ -3,13 +3,13 @@ Email Thread class
 """
 
 from collections import OrderedDict
+import webbrowser
 from networkx.drawing.nx_agraph import graphviz_layout
 import networkx as nx
 
 import matplotlib.pyplot as plt
 import numpy as nmp
 import pandas as pd
-import webbrowser
 
 class Thread(object):
 
@@ -21,8 +21,10 @@ class Thread(object):
         self.emails = data
 
         self.tree = nx.DiGraph()
+        self.network = nx.DiGraph()
 
         self._build_tree(data)
+        self._build_network(data)
 
         self.data = self._build_data()
 
@@ -38,6 +40,37 @@ class Thread(object):
         edges = data[['msg_id', 'in_reply_to']].dropna().values.tolist()
         self.tree.add_edges_from(edges)
 
+    def _build_network(self, data):
+        """Build network Graph object from email data
+
+        :data: panda dataframe
+        """
+
+        # Put every pair of from/to on a single line by splitting to with ;
+        edges = pd.DataFrame(data.to_email.str.split(';').tolist(), index=data.from_email).stack()
+
+        # Extract, rename and reorder columns
+        edges = edges.reset_index()[[0, 'from_email']]
+        edges.columns = ['to_email', 'from_email']
+        edges = edges[['from_email', 'to_email']]
+
+        # Remove all edges addressed to mailing list (first message)
+        edges = edges[edges.to_email != 'git@vger.kernel.org']
+
+        # If the thread consists of one sender only, there's no network to build
+        if edges.empty:
+            return
+
+        # Put each unique edge on its own line, with its frequence in 'weight'
+        edges = edges.groupby(['from_email', 'to_email']).size().reset_index(name='weight')
+
+        # Make it a relative weight (from 0 to 1) rather than a frequence
+        edges['weight'] = edges['weight']/max(edges.weight)
+
+        # Add edges
+        for edge in edges.itertuples():
+            self.network.add_edge(edge.from_email, edge.to_email, weight=edge.weight)
+
     def data_frame(self):
         """
         Return thread data as pandas dataframe
@@ -49,10 +82,11 @@ class Thread(object):
         Return thread data as dictionary
         """
         degrees = [d for n, d in self.tree.in_degree]
+        authors = len(self.network.nodes) if len(self.network.nodes) > 0 else 1
         row = [
             self.emails['thread'].tolist()[0],
             self.emails.shape[0],
-            len(self.emails.from_email.unique()),
+            authors,
             max(self.emails.date) - min(self.emails.date),
             nx.dag_longest_path_length(self.tree),
             round(nmp.mean(degrees), 2),
@@ -61,7 +95,7 @@ class Thread(object):
         result = OrderedDict(zip(self.cols, row))
         return result
 
-    def draw(self):
+    def draw_tree(self):
         """Display simple drawing of thread tree graph"""
 
         plt.subplot(121)
@@ -79,9 +113,33 @@ class Thread(object):
 
         plt.show()
 
+    def draw_network(self):
+        """Display simple drawing of thread network graph"""
+
+        plt.subplot(121)
+
+        pos = nx.spring_layout(self.network)
+
+        nx.draw_networkx_nodes(self.network, pos)
+        weights = nx.get_edge_attributes(self.network, 'weight').values()
+
+        for weight_dec in [0.5, 1]:
+            edges_dec = [(u, v) for (u, v, d) in self.network.edges(data=True) if weight_dec-0.5 < d['weight'] <= weight_dec]
+            nx.draw_networkx_edges(self.network, pos, edgelist=edges_dec,
+                                   width=weight_dec*2)
+
+        nx.draw_networkx_labels(self.network, pos)
+
+        plt.axis('off')
+        plt.show()
+
     def graph_info(self):
         """Print tree info"""
         print(nx.info(self.tree))
+
+    def graph_network(self):
+        """Print network info"""
+        print(nx.info(self.network))
 
     def open(self):
         """Open thread in web browser"""

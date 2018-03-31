@@ -17,7 +17,7 @@ THREAD2 = Thread(THREAD2_DATA)
 
 def test_thread_data():
     assert dict(THREAD1.data) == {
-        'authors': 2,
+        'authors': 3,
         'depth': 4,
         'in_degree': 0.8,
         'star_nodes': 0,
@@ -27,7 +27,7 @@ def test_thread_data():
     }
 
     assert dict(THREAD2.data) == {
-        'authors': 4,
+        'authors': 5,
         'depth': 7,
         'in_degree': 0.93,
         'duration': pandas.Timedelta(days=12, hours=22, minutes=43, seconds=57),
@@ -35,6 +35,13 @@ def test_thread_data():
         'emails': 15,
         'thread': 111896264700001,
     }
+
+def test_network_data():
+    assert len(THREAD1.network.nodes) == 3
+    assert len(THREAD1.network.edges) == 4
+
+    assert len(THREAD2.network.nodes) == 5
+    assert len(THREAD2.network.edges) == 6
 
 def test_tree_data():
     assert len(THREAD1.tree.nodes) == 5
