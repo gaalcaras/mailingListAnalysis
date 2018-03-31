@@ -47,12 +47,16 @@ class Thread(object):
         """
 
         # Put every pair of from/to on a single line by splitting to with ;
+        data = data[['from_email', 'to_email']].dropna()
         edges = pd.DataFrame(data.to_email.str.split(';').tolist(), index=data.from_email).stack()
 
         # Extract, rename and reorder columns
         edges = edges.reset_index()[[0, 'from_email']]
         edges.columns = ['to_email', 'from_email']
         edges = edges[['from_email', 'to_email']]
+
+        if edges.empty:
+            return
 
         # Remove all edges addressed to mailing list (first message)
         edges = edges[edges.to_email != 'git@vger.kernel.org']
