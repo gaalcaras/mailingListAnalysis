@@ -21,7 +21,7 @@ class Thread(object):
             'depth',
             'star_nodes',
             'h_index',
-            'deg_max', 'deg_max_1', 'deg_max_2', 'deg_max_3', 'deg_max_4', 'deg_max_5'
+            'deg_max', 'deg_max_2', 'deg_max_3', 'deg_max_4', 'deg_max_5'
             ]
 
     def __init__(self, data):
@@ -105,7 +105,6 @@ class Thread(object):
             nx.dag_longest_path_length(self.tree), # Depth
             sum(d > 1 for d in degrees), # Star nodes
             h_index(degrees),
-            max(degrees),
             nth_elt(degrees, 0), nth_elt(degrees, 1), nth_elt(degrees, 2), nth_elt(degrees, 3), nth_elt(degrees, 4)
         ]
 
