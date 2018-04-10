@@ -11,11 +11,15 @@ import matplotlib.pyplot as plt
 import numpy as nmp
 import pandas as pd
 
+from tools import nth_elt
+
 class Thread(object):
 
     """Email Thread"""
 
-    cols = ['thread', 'emails', 'authors', 'duration', 'depth', 'in_degree', 'star_nodes']
+    cols = ['thread', 'emails', 'authors', 'start', 'duration',
+            'depth', 'deg_max', 'deg_max_1', 'deg_max_2', 'deg_max_3', 'deg_max_4', 'deg_max_5',
+            'star_nodes']
 
     def __init__(self, data):
         self.emails = data
@@ -34,8 +38,7 @@ class Thread(object):
         :data: panda dataframe
         """
         for row in data[['msg_id', 'from_email']].itertuples():
-            self.tree.add_node(row.msg_id,
-                                author=row.from_email)
+            self.tree.add_node(row.msg_id, author=row.from_email)
 
         edges = data[['msg_id', 'in_reply_to']].dropna().values.tolist()
         self.tree.add_edges_from(edges)
@@ -86,17 +89,24 @@ class Thread(object):
         Return thread data as dictionary
         """
         degrees = [d for n, d in self.tree.in_degree]
-        authors = len(self.network.nodes) if len(self.network.nodes) > 0 else 1
+        degrees.sort(reverse=True)
+
+        authors = len(self.network.nodes) if self.network.nodes else 1
+
         row = [
             self.emails['thread'].tolist()[0],
             self.emails.shape[0],
             authors,
+            min(self.emails.date),
             max(self.emails.date) - min(self.emails.date),
             nx.dag_longest_path_length(self.tree),
-            round(nmp.mean(degrees), 2),
+            max(degrees),
+            nth_elt(degrees, 0), nth_elt(degrees, 1), nth_elt(degrees, 2), nth_elt(degrees, 3), nth_elt(degrees, 4),
             sum(d > 1 for d in degrees)
         ]
+
         result = OrderedDict(zip(self.cols, row))
+
         return result
 
     def draw_tree(self):
