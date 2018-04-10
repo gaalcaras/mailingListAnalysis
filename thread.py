@@ -162,6 +162,6 @@ class Thread(object):
         """Print network info"""
         print(nx.info(self.network))
 
-    def open(self):
+    def open(self, url='https://public-inbox.org/git/'):
         """Open thread in web browser"""
-        webbrowser.open('https://public-inbox.org/git/' + self.emails['thread'].tolist()[0])
+        webbrowser.open(url + self.emails['thread'].tolist()[0])
