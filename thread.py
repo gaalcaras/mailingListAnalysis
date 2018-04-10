@@ -113,10 +113,10 @@ class Thread(object):
 
         return result
 
-    def draw_tree(self):
+    def draw_tree(self, show=True):
         """Display simple drawing of thread tree graph"""
 
-        plt.subplot(121)
+        plt.figure()
 
         pos = graphviz_layout(self.tree, prog='dot')
 
@@ -129,12 +129,13 @@ class Thread(object):
 
         nx.draw(self.tree, pos, node_color=color_seq)
 
-        plt.show()
+        if show:
+            plt.show()
 
-    def draw_network(self):
+    def draw_network(self, show=True):
         """Display simple drawing of thread network graph"""
 
-        plt.subplot(121)
+        plt.figure()
 
         pos = nx.spring_layout(self.network)
 
@@ -149,7 +150,9 @@ class Thread(object):
         nx.draw_networkx_labels(self.network, pos)
 
         plt.axis('off')
-        plt.show()
+
+        if show:
+            plt.show()
 
     def graph_info(self):
         """Print tree info"""

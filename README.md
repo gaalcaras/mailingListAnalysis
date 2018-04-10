@@ -37,6 +37,7 @@ git_may_2017.process_threads()
 print(git_may_2017.threads)
 
 # Select a thread and draw its tree
+# Pro tip: don't forget to run '%pylab' if you're in the jupyter console
 git_may_2017.thread('20170520214233.7183-1-avarab@gmail.com').draw_tree()
 
 # Open the thread in your browser
