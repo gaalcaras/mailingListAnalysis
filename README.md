@@ -62,7 +62,7 @@ All included datasets come from the [Git mailing list](https://public-inbox.org/
 
 | File | Dataset description |
 | ---- | ---- |
-| `test_thread1.csv` | Small 4 email [thread](20170523195132.s57ikef4romy3n3r@sigill.intra.peff.net) |
+| `test_thread1.csv` | Small 4 email [thread](https://public-inbox.org/git/20170523195132.s57ikef4romy3n3r@sigill.intra.peff.net) |
 | `test_thread2.csv` | Bigger 15 email [thread](https://public-inbox.org/git/tnxy899zzu7.fsf@arm.com/) |
 | `test_sample1.csv` | 321 emails (41 threads in total) from 2017-05-19 to 2017-05-25 |
 
