@@ -11,15 +11,18 @@ import matplotlib.pyplot as plt
 import numpy as nmp
 import pandas as pd
 
-from tools import nth_elt
+from tools import nth_elt, h_index
 
 class Thread(object):
 
     """Email Thread"""
 
     cols = ['thread', 'emails', 'authors', 'start', 'duration',
-            'depth', 'deg_max', 'deg_max_1', 'deg_max_2', 'deg_max_3', 'deg_max_4', 'deg_max_5',
-            'star_nodes']
+            'depth',
+            'star_nodes',
+            'h_index',
+            'deg_max', 'deg_max_1', 'deg_max_2', 'deg_max_3', 'deg_max_4', 'deg_max_5'
+            ]
 
     def __init__(self, data):
         self.emails = data
@@ -95,14 +98,15 @@ class Thread(object):
 
         row = [
             self.emails['thread'].tolist()[0],
-            self.emails.shape[0],
+            self.emails.shape[0], # Nb of emails
             authors,
             min(self.emails.date),
             max(self.emails.date) - min(self.emails.date),
-            nx.dag_longest_path_length(self.tree),
+            nx.dag_longest_path_length(self.tree), # Depth
+            sum(d > 1 for d in degrees), # Star nodes
+            h_index(degrees),
             max(degrees),
-            nth_elt(degrees, 0), nth_elt(degrees, 1), nth_elt(degrees, 2), nth_elt(degrees, 3), nth_elt(degrees, 4),
-            sum(d > 1 for d in degrees)
+            nth_elt(degrees, 0), nth_elt(degrees, 1), nth_elt(degrees, 2), nth_elt(degrees, 3), nth_elt(degrees, 4)
         ]
 
         result = OrderedDict(zip(self.cols, row))

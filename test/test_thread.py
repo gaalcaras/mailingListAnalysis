@@ -20,6 +20,7 @@ def test_thread_data():
         'authors': 3,
         'depth': 4,
         'star_nodes': 0,
+        'h_index': 1,
         'start': pandas.Timestamp('2017-05-19 12:48:34'),
         'duration': pandas.Timedelta(days=4, hours=10, minutes=58, seconds=26),
         'deg_max': 1,
@@ -35,6 +36,7 @@ def test_thread_data():
     assert dict(THREAD2.data) == {
         'authors': 5,
         'depth': 7,
+        'h_index': 2,
         'start': pandas.Timestamp('2005-06-16 22:44:32'),
         'duration': pandas.Timedelta(days=12, hours=22, minutes=43, seconds=57),
         'deg_max': 2,
