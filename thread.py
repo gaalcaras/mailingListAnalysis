@@ -17,7 +17,7 @@ class Thread(object):
 
     """Email Thread"""
 
-    cols = ['thread', 'emails', 'authors', 'start', 'duration',
+    cols = ['thread', 'emails', 'users', 'start', 'duration',
             'depth',
             'star_nodes',
             'h_index',
@@ -94,12 +94,12 @@ class Thread(object):
         degrees = [d for n, d in self.tree.in_degree]
         degrees.sort(reverse=True)
 
-        authors = len(self.network.nodes) if self.network.nodes else 1
+        users = len(self.network.nodes) if self.network.nodes else 1
 
         row = [
             self.emails['thread'].tolist()[0],
             self.emails.shape[0], # Nb of emails
-            authors,
+            users,
             min(self.emails.date),
             max(self.emails.date) - min(self.emails.date),
             nx.dag_longest_path_length(self.tree), # Depth
@@ -122,7 +122,7 @@ class Thread(object):
 
         # Colors
         cmap = plt.get_cmap('jet')
-        color = cmap(nmp.linspace(0, 1, self.data['authors']))
+        color = cmap(nmp.linspace(0, 1, self.data['users']))
         color_d = dict(zip(self.emails.from_email.unique(), color))
         author_seq = nx.get_node_attributes(self.tree, 'author').values()
         color_seq = [color_d[n] for n in author_seq]

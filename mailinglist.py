@@ -76,7 +76,7 @@ class MailingList(object):
             thread_df.loc[i] = [v for v in thread.data.values()]
             self._threads[str(thread_id)] = thread
 
-        thread_df = thread_df.sort_values(by=['emails', 'authors'],
+        thread_df = thread_df.sort_values(by=['emails', 'users'],
                                           ascending=[False, False])
         self.threads = thread_df
 
