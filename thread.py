@@ -17,7 +17,7 @@ class Thread(object):
 
     """Email Thread"""
 
-    cols = ['thread', 'emails', 'users', 'start', 'duration',
+    cols = ['thread', 'emails', 'users', 'start', 'days',
             'depth',
             'star_nodes',
             'h_index',
@@ -101,7 +101,7 @@ class Thread(object):
             self.emails.shape[0], # Nb of emails
             users,
             min(self.emails.date),
-            max(self.emails.date) - min(self.emails.date),
+            (max(self.emails.date) - min(self.emails.date)).days,
             nx.dag_longest_path_length(self.tree), # Depth
             sum(d > 1 for d in degrees), # Star nodes
             h_index(degrees),
