@@ -1,10 +1,14 @@
+from collections import Counter
 import matplotlib.pyplot as plt
 
 def scatter(df, var_list, log=True, show=True):
     x = df[var_list[0]]
     y = df[var_list[1]]
 
-    sc = plt.scatter(x, y)
+    freq = Counter(zip(x, y))
+    size = [10*freq[(xx,yy)] for xx,yy in zip(x,y)]
+
+    sc = plt.scatter(x, y, s=size, alpha=0.5)
     x_label = var_list[0]
     y_label = var_list[1]
 
