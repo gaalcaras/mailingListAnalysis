@@ -2,7 +2,7 @@ import seaborn as sns
 import numpy as nmp
 import matplotlib.pyplot as plt
 import pandas as pd
-from tools import square_list, int_list
+from tools import rect_list, int_list
 
 def heatmap_count(df, var_list, show=True):
     """Draw heatmap count of two variables"""
@@ -28,8 +28,8 @@ def ordered_mosaic(df, var_list, show=True):
     values = int_list(labels)
 
     # Give the values and the labels the same shape
-    values = nmp.array(square_list(values))
-    labels = nmp.array(square_list(labels))
+    values = nmp.array(rect_list(values))
+    labels = nmp.array(rect_list(labels))
 
     mosaic = sns.heatmap(values, annot=labels, fmt='', cbar=False,
                          xticklabels=False, yticklabels=False)

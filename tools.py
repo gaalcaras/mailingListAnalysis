@@ -41,7 +41,7 @@ def int_list(sequence):
 
     return result
 
-def square_dimension(integer):
+def rect_dimension(integer):
     """Find dimension x of a rectangle that can contain all values of
     a range from 1 to integer while keeping rectangle as close to a square as
     possible"""
@@ -62,8 +62,8 @@ def square_dimension(integer):
 
     return m1
 
-def square_list(sequence):
-    chunk = square_dimension(len(sequence))
+def rect_list(sequence):
+    chunk = rect_dimension(len(sequence))
     result = list(zip(*[iter(sequence)] * chunk))
 
     diff = len(sequence) % chunk
