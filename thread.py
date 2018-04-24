@@ -122,9 +122,9 @@ class Thread(object):
 
         # Colors
         cmap = plt.get_cmap('jet')
-        color = cmap(nmp.linspace(0, 1, self.data['users']))
-        color_d = dict(zip(self.emails.from_email.unique(), color))
         author_seq = nx.get_node_attributes(self.tree, 'author').values()
+        color = cmap(nmp.linspace(0, 1, len(author_seq)))
+        color_d = dict(zip(author_seq, color))
         color_seq = [color_d[n] for n in author_seq]
 
         nx.draw(self.tree, pos, node_color=color_seq, ax=ax)

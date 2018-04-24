@@ -17,10 +17,15 @@ THREAD2_DATA = pandas.read_csv('data/test_thread2.csv',
                                infer_datetime_format=True)
 THREAD2 = Thread(THREAD2_DATA)
 
+THREAD3_DATA = pandas.read_csv('data/test_thread3.csv',
+                               parse_dates=['date'],
+                               infer_datetime_format=True)
+THREAD3 = Thread(THREAD3_DATA)
+
 ML1 = MailingList('data/test_sample1.csv')
 ML1.make_threads()
 ML1.process_threads()
-THREAD3 = ML1.thread('20170520214233.7183-1-avarab@gmail.com')
+THREAD4 = ML1.thread('20170520214233.7183-1-avarab@gmail.com')
 
 def test_thread_data():
     assert dict(THREAD1.data) == {
@@ -73,6 +78,7 @@ def test_draw_tree():
     THREAD1.draw_tree(show=False)
     THREAD2.draw_tree(show=False)
     THREAD3.draw_tree(show=False)
+    THREAD4.draw_tree(show=False)
 
     # Test save argument
     THREAD1.draw_tree(save=True)
@@ -84,6 +90,7 @@ def test_draw_network():
     THREAD1.draw_network(show=False)
     THREAD2.draw_network(show=False)
     THREAD3.draw_network(show=False)
+    THREAD4.draw_network(show=False)
 
     # Test save argument
     THREAD1.draw_network(save=True)
