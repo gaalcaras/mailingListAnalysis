@@ -1,3 +1,4 @@
+import os
 import numpy as nmp
 import math
 
@@ -79,3 +80,18 @@ def rect_list(sequence):
         result.append(tuple(row))
 
     return result
+
+def save_fig(fig, *args):
+    """Export a matplotlib figure to a svg file, with path given as a list
+    of arguments.
+
+    :fig: matplotlib figure
+    :args: path (e.g. 'dir', 'to', 'file')"""
+
+    path = os.path.join(*[str(a) for a in args])
+
+    dirname = os.path.dirname(path)
+    if not os.path.isdir(dirname):
+        os.makedirs(dirname)
+
+    fig.savefig('{}.svg'.format(path))

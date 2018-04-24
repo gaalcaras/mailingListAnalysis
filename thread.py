@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as nmp
 import pandas as pd
 
-from tools import nth_elt, h_index
+from tools import nth_elt, h_index, save_fig
 
 class Thread(object):
 
@@ -112,10 +112,11 @@ class Thread(object):
 
         return result
 
-    def draw_tree(self, show=True):
+    def draw_tree(self, show=True, save=False):
         """Display simple drawing of thread tree graph"""
 
-        plt.figure()
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
 
         pos = graphviz_layout(self.tree, prog='dot')
 
@@ -126,32 +127,45 @@ class Thread(object):
         author_seq = nx.get_node_attributes(self.tree, 'author').values()
         color_seq = [color_d[n] for n in author_seq]
 
-        nx.draw(self.tree, pos, node_color=color_seq)
+        nx.draw(self.tree, pos, node_color=color_seq, ax=ax)
+
+        if save:
+            show = False
+            save_fig(fig, 'img', 'tree', self.data['thread'])
 
         if show:
-            plt.show()
+            plt.show(ax)
 
-    def draw_network(self, show=True):
+        plt.close(fig)
+
+    def draw_network(self, show=True, save=False):
         """Display simple drawing of thread network graph"""
 
-        plt.figure()
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
 
         pos = nx.spring_layout(self.network)
 
-        nx.draw_networkx_nodes(self.network, pos)
+        nx.draw_networkx_nodes(self.network, pos, ax=ax)
         weights = nx.get_edge_attributes(self.network, 'weight').values()
 
         for weight_dec in [0.5, 1]:
             edges_dec = [(u, v) for (u, v, d) in self.network.edges(data=True) if weight_dec-0.5 < d['weight'] <= weight_dec]
             nx.draw_networkx_edges(self.network, pos, edgelist=edges_dec,
-                                   width=weight_dec*2)
+                                   width=weight_dec*2, ax=ax)
 
-        nx.draw_networkx_labels(self.network, pos)
+        nx.draw_networkx_labels(self.network, pos, ax=ax)
 
-        plt.axis('off')
+        ax.axis('off')
+
+        if save:
+            show = False
+            save_fig(fig, 'img', 'network', self.data['thread'])
 
         if show:
-            plt.show()
+            plt.show(ax)
+
+        plt.close(fig)
 
     def graph_info(self):
         """Print tree info"""

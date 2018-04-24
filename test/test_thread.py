@@ -3,6 +3,7 @@ Tests for Thread class
 """
 
 from thread import Thread
+import os
 from mailinglist import MailingList
 import pandas
 
@@ -73,7 +74,19 @@ def test_draw_tree():
     THREAD2.draw_tree(show=False)
     THREAD3.draw_tree(show=False)
 
+    # Test save argument
+    THREAD1.draw_tree(save=True)
+    filepath = os.path.join('img', 'tree', '149519831100002.svg')
+    assert os.path.isfile(filepath) == True
+    os.remove(filepath)
+
 def test_draw_network():
     THREAD1.draw_network(show=False)
     THREAD2.draw_network(show=False)
     THREAD3.draw_network(show=False)
+
+    # Test save argument
+    THREAD1.draw_network(save=True)
+    filepath = os.path.join('img', 'network', '149519831100002.svg')
+    assert os.path.isfile(filepath) == True
+    os.remove(filepath)
