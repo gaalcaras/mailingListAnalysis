@@ -42,6 +42,7 @@ def test_int_list():
 
 def test_is_patch():
     assert is_patch('[PATCH 0/2] Fix crashes due to real_pathdup() potentially returning NULL') == True
+    assert is_patch('[RFC PATCH v2 0/9] Improve merge recursive performance') == True
     assert is_patch('[PATCH V2 1/2] Fix delta integer overflows') == True
 
     assert is_patch('[RFC for GIT] pull-request: add praise to people doing QA') == False
