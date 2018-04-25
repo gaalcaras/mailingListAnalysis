@@ -31,7 +31,9 @@ sortGraphs = function(crit1, crit2='depth') {
   grid.innerHTML = null;
   grid.appendChild(elements);
 
-  decorateGraphs(crit1);
+  if (document.getElementById('crit1-color').checked) {
+    decorateGraphs(crit1);
+  }
 }
 
 switchGraphDecoration = function(checked) {
