@@ -67,6 +67,16 @@ def make_page(filepath, title, body):
 <input type="range" min="100" max="500" step="10" value="300" id="img-size" oninput="changeImageSize(this.value)">
 </p>
 </fieldset>
+<fieldset id="sort">
+<p>
+<label>Crit1</label>
+<select id="crit1" class="criteria" onchange="reorderGrid()"></select>
+</p>
+<p>
+<label>Crit2</label>
+<select id="crit2" class="criteria" onchange="reorderGrid()"></select>
+</p>
+</fieldset>
 </form>
 </div>
 <div id="grid">

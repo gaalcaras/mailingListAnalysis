@@ -4,10 +4,23 @@
   left: 0;
   z-index: 9999;
   background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid gray;
 }
 
 h1 {
   font-size: 1em;
+}
+
+fieldset {
+  border: none;
+  display: inline-block;
+  padding: 0;
+}
+
+fieldset p {
+  max-height: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 #grid {
@@ -15,8 +28,8 @@ h1 {
 }
 
 img {
-  width: 250px;
-  height: 250px;
+  width: 120px;
+  height: 120px;
 }
 
 .tree a {
