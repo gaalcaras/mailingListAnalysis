@@ -108,3 +108,44 @@ changeImageSize = function(value){
     img.style.height = 'auto';
   })
 }
+
+changeGridMode = function(value) {
+  if (value === 'list') {
+    reorderGrid();
+  } else {
+    tableGrid();
+  }
+}
+
+tableGrid = function() {
+  var crit1 = document.getElementById('crit1').value,
+      crit2 = document.getElementById('crit2').value,
+      graphs = document.querySelectorAll('.tree'),
+      graphsArr = Array.prototype.slice.call(graphs),
+      var1 = [...new Set(graphsArr.map(x => x.dataset[crit1]))],
+      var2 = [...new Set(graphsArr.map(x => x.dataset[crit2]))],
+      // elements = document.createDocumentFragment(),
+      grid = document.getElementById('grid'),
+      table = document.createElement('table');
+
+  var1.forEach(function(value) {
+    var tr = document.createElement('tr'),
+        trees = document.querySelectorAll('[data-' + crit1 + '=\'' + value + '\']'),
+        td = document.createElement('td');
+
+    td.innerHTML = value;
+    tr.appendChild(td)
+
+    trees.forEach(function(tree) {
+      var td = document.createElement('td');
+      td.appendChild(tree);
+      tr.appendChild(td);
+    });
+
+    table.appendChild(tr);
+  });
+
+
+  grid.innerHTML = null;
+  grid.appendChild(table);
+}

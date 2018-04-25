@@ -29,6 +29,15 @@
             <select id="crit2" class="criteria" onchange="reorderGrid()"></select>
           </p>
         </fieldset>
+        <fieldset>
+          <p>
+          <label>Mode</label>
+          <select id="mode" onchange="changeGridMode(this.value)">
+            <option value="list">Ordered List</option>
+            <option value="table">Table</option>
+          </select>
+          </p>
+        </fieldset>
       </form>
     </div>
 
