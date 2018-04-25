@@ -25,6 +25,9 @@ fieldset p {
 
 #grid {
   z-index: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 img {
