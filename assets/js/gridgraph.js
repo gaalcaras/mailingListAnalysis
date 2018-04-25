@@ -1,7 +1,7 @@
 window.onload = function() {
   populateOptions();
   sortGraphs('depth', 'star_nodes');
-  changeImageSize(130);
+  changeImageSize(150);
 }
 
 sortGraphs = function(crit1, crit2='depth') {
@@ -30,6 +30,31 @@ sortGraphs = function(crit1, crit2='depth') {
 
   grid.innerHTML = null;
   grid.appendChild(elements);
+
+  decorateGraphs(crit1);
+}
+
+decorateGraphs = function(crit1) {
+  var graphs = document.querySelectorAll('.tree'),
+      graphsArr = Array.prototype.slice.call(graphs),
+      allValues = graphsArr.map(x => x.dataset[crit1]),
+      uniqueValues = [...new Set(allValues)],
+      opacity = 0.1,
+      step = 0.9/uniqueValues.length;
+
+  console.log(uniqueValues);
+
+  uniqueValues.forEach(function(val) {
+    var trees = document.querySelectorAll('[data-' + crit1 + '=\'' + val + '\']'),
+        treesArr = Array.prototype.slice.call(trees);
+
+    console.log(trees);
+    treesArr.forEach(function(tree) {
+      tree.style['border-bottom'] = '2px solid rgba(0, 0, 139, ' + opacity + ')';
+    });
+
+    opacity += step;
+  });
 }
 
 reorderGrid = function() {
@@ -68,6 +93,6 @@ changeImageSize = function(value){
 
   imagesArr.forEach(function(img) {
     img.style.width = value + 'px';
-    img.style.height = value + 'px';
+    img.style.height = 'auto';
   })
 }
