@@ -3,7 +3,7 @@ Tests for various useful tools / functions
 """
 
 import numpy as nmp
-from tools import nth_elt, h_index, rect_dimension, rect_list, int_list
+from tools import nth_elt, h_index, rect_dimension, rect_list, int_list, is_patch
 
 def test_nth_elt():
     a = [9, 8, 3]
@@ -39,3 +39,10 @@ def test_int_list():
     l1 = ['a', 'a', 'b', 'c', 'd', 'd', 'd', 'e']
 
     assert int_list(l1) == [0, 0, 1, 2, 3, 3, 3, 4]
+
+def test_is_patch():
+    assert is_patch('[PATCH 0/2] Fix crashes due to real_pathdup() potentially returning NULL') == True
+    assert is_patch('[PATCH V2 1/2] Fix delta integer overflows') == True
+
+    assert is_patch('[RFC for GIT] pull-request: add praise to people doing QA') == False
+    assert is_patch('patch proposal') == False

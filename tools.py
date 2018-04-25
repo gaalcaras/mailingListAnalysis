@@ -1,6 +1,7 @@
 import os
 import numpy as nmp
 import math
+import re
 
 def nth_elt(elts, nth):
     """Return nth element of list of elts, nan if nth element does not exist"""
@@ -95,3 +96,15 @@ def save_fig(fig, *args):
         os.makedirs(dirname)
 
     fig.savefig('{}.svg'.format(path))
+
+def is_patch(subject):
+    """Returns True if subject appears to be a patch.
+
+    :subject: subject of an email (str)
+    """
+    patch = re.compile(r'^\[PATCH[^\]]*\]')
+
+    if patch.match(subject):
+        return True
+
+    return False

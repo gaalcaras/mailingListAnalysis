@@ -11,13 +11,13 @@ import matplotlib.pyplot as plt
 import numpy as nmp
 import pandas as pd
 
-from tools import nth_elt, h_index, save_fig
+from tools import nth_elt, h_index, save_fig, is_patch
 
 class Thread(object):
 
     """Email Thread"""
 
-    cols = ['thread', 'subject', 'emails', 'users', 'start', 'days',
+    cols = ['thread', 'subject', 'patch', 'emails', 'users', 'start', 'days',
             'depth',
             'star_nodes',
             'h_index',
@@ -96,9 +96,11 @@ class Thread(object):
 
         users = len(self.network.nodes) if self.network.nodes else 1
 
+        sub = self.emails.loc[self.emails.date == min(self.emails.date), 'subject'].values[0]
         row = [
             self.emails['thread'].tolist()[0],
-            self.emails.loc[self.emails.date == min(self.emails.date), 'subject'].values[0],
+            sub,
+            1 if is_patch(sub) else 0,
             self.emails.shape[0], # Nb of emails
             users,
             min(self.emails.date),
