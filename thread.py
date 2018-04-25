@@ -17,7 +17,7 @@ class Thread(object):
 
     """Email Thread"""
 
-    cols = ['thread', 'emails', 'users', 'start', 'days',
+    cols = ['thread', 'subject', 'emails', 'users', 'start', 'days',
             'depth',
             'star_nodes',
             'h_index',
@@ -98,6 +98,7 @@ class Thread(object):
 
         row = [
             self.emails['thread'].tolist()[0],
+            self.emails.loc[self.emails.date == min(self.emails.date), 'subject'].values[0],
             self.emails.shape[0], # Nb of emails
             users,
             min(self.emails.date),
