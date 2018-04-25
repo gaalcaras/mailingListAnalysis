@@ -134,7 +134,7 @@ class Thread(object):
 
         if save:
             show = False
-            save_fig(fig, 'img', 'tree', self.data['thread'])
+            save_fig(fig, 'assets', 'img', 'tree', self.data['thread'])
 
         if show:
             plt.show(ax)
@@ -163,7 +163,7 @@ class Thread(object):
 
         if save:
             show = False
-            save_fig(fig, 'img', 'network', self.data['thread'])
+            save_fig(fig, 'assets', 'img', 'network', self.data['thread'])
 
         if show:
             plt.show(ax)

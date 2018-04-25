@@ -86,7 +86,7 @@ def test_draw_tree():
 
     # Test save argument
     THREAD1.draw_tree(save=True)
-    filepath = os.path.join('img', 'tree', '149519831100002.svg')
+    filepath = os.path.join('assets', 'img', 'tree', '149519831100002.svg')
     assert os.path.isfile(filepath) == True
     os.remove(filepath)
 
@@ -98,6 +98,6 @@ def test_draw_network():
 
     # Test save argument
     THREAD1.draw_network(save=True)
-    filepath = os.path.join('img', 'network', '149519831100002.svg')
+    filepath = os.path.join('assets', 'img', 'network', '149519831100002.svg')
     assert os.path.isfile(filepath) == True
     os.remove(filepath)

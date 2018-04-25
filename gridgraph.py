@@ -8,7 +8,7 @@ def gridgraph(ml, thread_ids, title):
     for thread in thread_ids:
         body += tree_img(ml.thread(thread))
 
-    make_page('html/{}.html'.format(title), title, body)
+    make_page('assets/html/{}.html'.format(title), title, body)
 
 def tree_img(thread):
     img = '<a href="http://public-inbox.org/git/{}"'.format(thread.data['thread'])
