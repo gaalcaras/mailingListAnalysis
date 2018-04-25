@@ -34,6 +34,19 @@ sortGraphs = function(crit1, crit2='depth') {
   decorateGraphs(crit1);
 }
 
+switchGraphDecoration = function(checked) {
+  if (checked) {
+    var crit1 = document.getElementById('crit1').value;
+    decorateGraphs(crit1);
+  } else {
+    var graphs = document.querySelectorAll('.tree');
+
+    graphs.forEach(function(graph) {
+      graph.style['border-bottom'] = '2px solid white';
+    })
+  }
+}
+
 decorateGraphs = function(crit1) {
   var graphs = document.querySelectorAll('.tree'),
       graphsArr = Array.prototype.slice.call(graphs),
@@ -42,13 +55,10 @@ decorateGraphs = function(crit1) {
       opacity = 0.1,
       step = 0.9/uniqueValues.length;
 
-  console.log(uniqueValues);
-
   uniqueValues.forEach(function(val) {
     var trees = document.querySelectorAll('[data-' + crit1 + '=\'' + val + '\']'),
         treesArr = Array.prototype.slice.call(trees);
 
-    console.log(trees);
     treesArr.forEach(function(tree) {
       tree.style['border-bottom'] = '2px solid rgba(0, 0, 139, ' + opacity + ')';
     });
