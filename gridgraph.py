@@ -35,6 +35,8 @@ def span_tree(thread):
     # Generate span attributes
     span_att = ''
     for key, value in thread.items():
+        if isinstance(value, str):
+            continue
         span_att += ' data-{}="{}"'.format(key, value)
 
     thread['span_att'] = span_att
