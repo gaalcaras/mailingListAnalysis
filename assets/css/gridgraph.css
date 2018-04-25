@@ -40,8 +40,12 @@ fieldset p {
 }
 
 img {
-  width: 130px;
-  height: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.tree {
+  margin: 0;
 }
 
 .tree a {
@@ -52,4 +56,8 @@ input[type=range] {
   -webkit-appearance: none;
   height:2px;
   background-color: gray;
+}
+
+.noBorder .tree {
+  border-bottom: 2px white solid !important;
 }
