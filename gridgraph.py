@@ -11,18 +11,22 @@ def gridgraph(ml, thread_ids, title):
     make_page('assets/html/{}.html'.format(title), title, body)
 
 def tree_img(thread):
-    img = '<a href="http://public-inbox.org/git/{}"'.format(thread.data['thread'])
-    img += ' target="_blank"'
-    img += ' title="{}"'.format(thread.data['subject'])
-    img += '>'
-    img += '<img'
-
+    img = '<span class="tree"'
     for k, v in thread.data.items():
         img += ' data-{}="{}"'.format(k, v)
 
+    img += '>\n'
+
+    img += '<a href="http://public-inbox.org/git/{}"'.format(thread.data['thread'])
+    img += ' target="_blank"'
+    img += ' title="{}"'.format(thread.data['subject'])
+    img += '>\n'
+    img += '<img'
+
     img += ' src="../img/tree/{}.svg"'.format(thread.data['thread'])
     img += ' alt="{}"'.format(thread.data['thread'])
-    img += '/></a>'
+    img += '/>\n</a>\n'
+    img += '</span>\n'
 
     return img
 
@@ -49,12 +53,25 @@ def make_page(filepath, title, body):
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <script src="../js/gridgraph.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/gridgraph.css"><Paste>
   <title>{}</title>
 </head>
 
 <body>
-<h1>title</h1>
+<div id="controls">
+<form>
+<fieldset>
+<p>
+<label>Image size</label>
+<input type="range" min="100" max="500" step="10" value="300" id="img-size" oninput="changeImageSize(this.value)">
+</p>
+</fieldset>
+</form>
+</div>
+<div id="grid">
 {}
+</div>
 </body>
 </html>
     """.format(title, body)
