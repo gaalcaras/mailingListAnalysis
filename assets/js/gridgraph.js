@@ -1,7 +1,7 @@
 window.onload = function() {
   populateOptions();
   sortGraphs('depth', 'star_nodes');
-  changeImageSize(120);
+  changeImageSize(130);
 }
 
 sortGraphs = function(crit1, crit2='depth') {
