@@ -1,4 +1,5 @@
 import os
+import pandas as pd
 import numpy as nmp
 import math
 import re
@@ -102,6 +103,9 @@ def is_patch(subject):
 
     :subject: subject of an email (str)
     """
+    if pd.isnull(subject):
+        return False
+
     patch = re.compile(r'^\[PATCH[^\]]*\]')
 
     if patch.match(subject):
