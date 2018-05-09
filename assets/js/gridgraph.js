@@ -1,6 +1,7 @@
 window.onload = function() {
   var graphs = new Graphs(document.querySelectorAll('.tree')),
-      grid = document.getElementById('grid');
+      grid = document.getElementById('grid'),
+      checkbox = document.getElementById('crit1-color');
 
   reorderGrid = function() {
     const crit1 = document.getElementById('crit1').value,
@@ -39,6 +40,7 @@ window.onload = function() {
   updateElementById('crit2', generateSelect(Object.keys(graphs.vars), 'star_nodes'));
   reorderGrid();
   changeImageSize(150);
+  checkbox.checked = false;
 };
 
 function range(start, end, step = 1) {
