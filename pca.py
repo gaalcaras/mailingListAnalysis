@@ -1,20 +1,34 @@
+"""
+pca.py
+
+Class to perform PCA and display helpful plots to help and explain the data.
+"""
+
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler, FunctionTransformer
 from sklearn.decomposition import PCA
 
-def LogNormTransform(data):
-    """Log norm"""
+def log_norm_transform(data):
+    """Returns the data after applying log and standardization it."""
     result = np.log1p(data)
     scaler = StandardScaler()
     scaler.fit(result)
     return scaler.transform(result)
 
+
 class ThreadPCA(object):
 
     def __init__(self, data, features, dimensions=3):
-        self.transformer = FunctionTransformer(LogNormTransform)
+        """Perform PCA using
+
+        :data: pandas dataframe
+        :features: list of features used to perform PCA
+        :dimensions: number of components returned
+        """
+
+        self.transformer = FunctionTransformer(log_norm_transform)
         self.data = data
         self.features = features
         self.data_t = self.transformer.transform(data[features])
@@ -56,7 +70,11 @@ class ThreadPCA(object):
                                   c=self.data[color], edgecolor='none',
                                   cmap=plt.cm.get_cmap('Spectral',
                                                        len(self.data[color].unique())))
+
+            # Add a colorbar
             cbar = plt.colorbar(scatter)
+
+            # Label the colorbar and adjust its position
             cbar.ax.set_ylabel(color, rotation=90)
             cbar.ax.get_yaxis().labelpad = 15
         else:
@@ -79,7 +97,6 @@ class ThreadPCA(object):
         # Give the plot a title
         ax.set_title('PCA (PC{}xPC{})'.format(components[0], components[1]))
 
-
         if show:
             plt.show()
 
@@ -92,16 +109,20 @@ class ThreadPCA(object):
         fig = plt.figure()
         ax = fig.add_subplot(1, 1, 1)
 
+        # Draw barplot
         x = np.arange(len(self.pca.components_))
-
         plt.bar(x, self.pca.explained_variance_ratio_)
 
+        # Add explained variance % on top of each bar
         for lab_x, lab_y in enumerate(self.pca.explained_variance_ratio_):
-            ax.text(lab_x, lab_y+0.03, str(round(lab_y, 2)),
+            ax.text(lab_x, lab_y+0.03,
+                    str(round(lab_y, 2)),
                     horizontalalignment='center')
 
-        plt.xticks(x, ('PC1', 'PC2', 'PC3'))
-        ax.set_yticks([0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0])
+        # Change name of ticks
+        plt.xticks(x, ('PC{}'.format(str(i+1)) for i in x))
+        ax.set_yticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
+
         ax.set_title('Scree plot')
 
         if show:
@@ -120,6 +141,7 @@ class ThreadPCA(object):
         fig = plt.figure()
         ax = fig.add_subplot(1, 1, 1)
 
+        # Keep figure square
         ax.set_aspect('equal')
 
         # Center axis around (0,0)
@@ -135,23 +157,24 @@ class ThreadPCA(object):
         ax.yaxis.set_tick_params(left=True, right=False, direction='inout')
 
         # Center the graph and make it square
-        ax.set_yticks([-1.0,-0.8,-0.6,-0.4,-0.2,0.2,0.4,0.6,0.8,1.0])
-        ax.set_xticks([-1.0,-0.8,-0.6,-0.4,-0.2,0.2,0.4,0.6,0.8,1.0])
+        ax.set_yticks([-1.0, -0.8, -0.6, -0.4, -0.2, 0.2, 0.4, 0.6, 0.8, 1.0])
+        ax.set_xticks([-1.0, -0.8, -0.6, -0.4, -0.2, 0.2, 0.4, 0.6, 0.8, 1.0])
 
         # Draw a circle of radius 1
-        circle1 = plt.Circle((0,0),radius=1, color='black', fill=False)
+        circle1 = plt.Circle((0, 0), radius=1, color='black', fill=False)
         ax.add_artist(circle1)
 
+        # Get colors for each vector arrow
         cmap = plt.cm.get_cmap('viridis', len(self.features))
+
         for feature in range(0, len(self.features)):
             # Get coordinates of the "arrow head" along both components
             x = self.pca.components_[components[0]-1, feature]
             y = self.pca.components_[components[1]-1, feature]
 
             # Compute coordinates for annotation
-            step = 0.05
-            anot_x = x + step if x>0 else x - step
-            anot_y = y + step if y>0 else y - step
+            anot_x = x + 0.05 if x > 0 else x - 0.05
+            anot_y = y + 0.05 if y > 0 else y - 0.05
 
             ax.arrow(0, 0, # Vector arrow starts at (0, 0)
                      x, y, # Arrow head coordinates
@@ -160,7 +183,7 @@ class ThreadPCA(object):
 
             # Add arrow annotation
             ax.annotate(self.features[feature],
-                        xy=(anot_x,anot_y),
+                        xy=(anot_x, anot_y),
                         color=cmap(feature))
 
         # Get explained variances as percentage for each component
@@ -189,22 +212,32 @@ class ThreadPCA(object):
         plt.close(fig)
 
     def match_data_transform(self):
+        """Create a table to allow matching original data points with the
+        transformed data and their coordinates on each component."""
+
         before = self.data[self.features]
 
+        # Create dataframe of data after transformation
         after = pd.DataFrame(data=self.data_t,
                              index=range(0, len(self.data_t)),
                              columns=self.features)
         after = after.add_suffix('_t')
 
-        projected = pd.DataFrame(data=self.projected,
-                                 index=range(0, len(self.data_t)),
-                                 columns=['PC{}'.format(i+1) for i in range(len(self.pca.components_))])
+        # Create dataframe of coordinates along each component
+        coord = pd.DataFrame(data=self.projected,
+                             index=range(0, len(self.data_t)),
+                             columns=['PC{}'.format(i+1) for i in range(len(self.pca.components_))])
 
+        # Bind columns from after and before
         self.table = pd.concat([after.reset_index(drop=True), before], axis=1)
-        self.table.drop_duplicates()
+
+        # Sort columns alphabetically
         self.table = self.table[sorted(self.table.columns.tolist())]
 
-        self.table = pd.concat([projected.reset_index(drop=True), self.table], axis=1)
+        # Bind columns from projected data and table
+        self.table = pd.concat([coord.reset_index(drop=True), self.table], axis=1)
+
+        # Count number of occurences of each row and display it in 'n' column
         self.table = self.table.groupby(self.table.columns.tolist()).size().reset_index(name='n')
 
     def show_points(self, coords={1:0, 2:0}, around=0.25, show_all=False):
@@ -217,17 +250,19 @@ class ThreadPCA(object):
 
         table = self.table
 
-        if not show_all:
-            table = table[[c for c in table.columns if '_t' not in c]]
-
+        # Select data points with the coordinates
         for pc, coord in coords.items():
             col = 'PC{}'.format(pc)
             table = table[(table[col] >= coord-around) & (table[col] <= coord+around)]
 
         if not show_all:
+            # Only keep relevant component coordinates
             pc_col = [c for c in table.columns if 'PC' in c]
             pc_col = [c for c in pc_col if int(c[-1]) not in coords.keys()]
             keep_cols = [c for c in table.columns if c not in pc_col]
             table = table[keep_cols]
+
+            # Remove transformed data from table
+            table = table[[c for c in table.columns if '_t' not in c]]
 
         print(table)

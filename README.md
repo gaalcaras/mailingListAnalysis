@@ -2,6 +2,8 @@
 
 Various tools to analyze mailing list data, developed during my PhD.
 
+![Visualisation of 60 email threads](assets/img/gridgraph.png)
+
 ## Installation
 
 First clone the repo and `cd` into it:
@@ -18,7 +20,37 @@ using [`pip`](https://pypi.python.org/pypi/pip):
 pip install -r requirements.txt
 ```
 
+## Directory structure
+
+At the root of the repo, you'll find the modules that you can load in your
+scripts to perform your data analysis process, such as `mailinglist.py`.
+
+The subdirectories contain:
+
++ **assets**: useful non python resources
+  + **img**: images of graphs, trees and so on
++ **data**: datasets
++ **output**: directory to save outputs from scripts (mainly html pages and images)
++ **scripts**: scripts to perform data analysis
++ **test**: unit tests to help and maintain the code
+
 ## Usage example
+
+You can either run the existing scripts in `scripts` to reproduce some of my results, or you can write your own script using the python modules at the root of the repo.
+
+### Running existing scripts
+
+You can run any of the scripts in `scripts` with `python -m` from **the root of the repo**.
+
+For instance, to run `scripts/03_pca_threads_2017.py`:
+
+```bash
+python -m scripts.03_pca_threads_2017
+```
+
+### Making your own script
+
+You can use any of the modules in the root directory to write your own script.
 
 ```python
 from mailinglist import MailingList
@@ -66,6 +98,7 @@ All included datasets come from the [Git mailing list](https://public-inbox.org/
 | `test_thread1.csv` | Small 4 email [thread](https://public-inbox.org/git/20170523195132.s57ikef4romy3n3r@sigill.intra.peff.net) |
 | `test_thread2.csv` | Bigger 15 email [thread](https://public-inbox.org/git/tnxy899zzu7.fsf@arm.com/) |
 | `test_sample1.csv` | 321 emails (41 threads in total) from 2017-05-19 to 2017-05-25 |
+| `threads2017.csv` | All ~2500 threads from the year 2017 |
 
 ## Testing
 
