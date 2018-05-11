@@ -97,7 +97,6 @@ class ThreadPCA(object):
         plt.bar(x, self.pca.explained_variance_ratio_)
 
         for lab_x, lab_y in enumerate(self.pca.explained_variance_ratio_):
-            print('{} {}'.format(lab_x, lab_y))
             ax.text(lab_x, lab_y+0.03, str(round(lab_y, 2)),
                     horizontalalignment='center')
 
