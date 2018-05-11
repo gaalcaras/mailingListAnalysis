@@ -20,7 +20,7 @@ using [`pip`](https://pypi.python.org/pypi/pip):
 pip install -r requirements.txt
 ```
 
-To keep a lean repository, the datasets are *not* included by default, but you can easily download them all by running:
+To keep a lean repository, the datasets are *not* included by default, but you can easily download them all by running the following command from **the root of the repository**:
 
 ```bash
 ./data/get_data.sh
@@ -48,11 +48,14 @@ You can either run the existing scripts in `scripts` to reproduce some of my res
 
 You can run any of the scripts in `scripts` with `python -m` from **the root of the repo**.
 
-For instance, to run `scripts/03_pca_threads_2017.py`:
+For instance, if you'd like to replicate the grid of graphs presented above, you can run:
 
 ```bash
-python -m scripts.03_pca_threads_2017
+python -m scripts.02_draw_trees_2017
+python -m scripts.03_gridgraph_2017
 ```
+
+Then you can open `output/gridgraph_17_10.html` in your browser.
 
 ### Making your own script
 
