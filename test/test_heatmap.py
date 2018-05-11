@@ -2,7 +2,7 @@ import pandas as pd
 import heatmap as ht
 import matplotlib.pyplot as plt
 
-threads = pd.read_csv('data/threads2017.csv')
+threads = pd.read_csv('data/working/threads2017.csv')
 small_t = threads[threads.emails == 10]
 
 def test_heatmap_count():

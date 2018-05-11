@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 from pca import ThreadPCA
 
-threads = pd.read_csv('data/threads2017.csv')
+threads = pd.read_csv('data/working/threads2017.csv')
 
 # Compute a ratio
 threads['ratio'] = np.log1p(threads['depth']) / np.log1p(threads['emails'])

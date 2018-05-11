@@ -1,3 +1,4 @@
 assets/img/*
 !assets/img/gridgraph.png
 output
+data/working/year2017_threaded.csv

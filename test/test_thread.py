@@ -7,22 +7,22 @@ import os
 from mailinglist import MailingList
 import pandas
 
-THREAD1_DATA = pandas.read_csv('data/test_thread1.csv',
+THREAD1_DATA = pandas.read_csv('data/test/test_thread1.csv',
                                parse_dates=['date'],
                                infer_datetime_format=True)
 THREAD1 = Thread(THREAD1_DATA)
 
-THREAD2_DATA = pandas.read_csv('data/test_thread2.csv',
+THREAD2_DATA = pandas.read_csv('data/test/test_thread2.csv',
                                parse_dates=['date'],
                                infer_datetime_format=True)
 THREAD2 = Thread(THREAD2_DATA)
 
-THREAD3_DATA = pandas.read_csv('data/test_thread3.csv',
+THREAD3_DATA = pandas.read_csv('data/test/test_thread3.csv',
                                parse_dates=['date'],
                                infer_datetime_format=True)
 THREAD3 = Thread(THREAD3_DATA)
 
-ML1 = MailingList('data/test_sample1.csv')
+ML1 = MailingList('data/test/test_sample1.csv')
 ML1.make_threads()
 ML1.process_threads()
 THREAD4 = ML1.thread('20170520214233.7183-1-avarab@gmail.com')

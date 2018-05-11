@@ -5,8 +5,8 @@ Tests for MailingList class
 import pandas
 from mailinglist import MailingList
 
-ML1 = MailingList('data/test_thread2.csv')
-ML2 = MailingList('data/test_sample1.csv')
+ML1 = MailingList('data/test/test_thread2.csv')
+ML2 = MailingList('data/test/test_sample1.csv')
 
 
 class TestMakeThreads(object):

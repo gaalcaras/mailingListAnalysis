@@ -20,6 +20,12 @@ using [`pip`](https://pypi.python.org/pypi/pip):
 pip install -r requirements.txt
 ```
 
+To keep a lean repository, the datasets are *not* included by default, but you can easily download them all by running:
+
+```bash
+./data/get_data.sh
+```
+
 ## Directory structure
 
 At the root of the repo, you'll find the modules that you can load in your
@@ -29,7 +35,7 @@ The subdirectories contain:
 
 + **assets**: useful non python resources
   + **img**: images of graphs, trees and so on
-+ **data**: datasets
++ **data**: datasets (must be downloaded, see [Installation](#installation))
 + **output**: directory to save outputs from scripts (mainly html pages and images)
 + **scripts**: scripts to perform data analysis
 + **test**: unit tests to help and maintain the code
@@ -56,7 +62,7 @@ You can use any of the modules in the root directory to write your own script.
 from mailinglist import MailingList
 
 # Load the mailing list data (Git mailing list from May 19 2017 to May 25 2017)
-git_may_2017 = MailingList('data/test_sample1.csv')
+git_may_2017 = MailingList('data/test/test_sample1.csv')
 
 # See the emails data frame
 print(git_may_2017.emails)
