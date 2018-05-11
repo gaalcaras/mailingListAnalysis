@@ -3,3 +3,4 @@ networkx
 pandas
 seaborn
 tdqm
+scikit-learn
