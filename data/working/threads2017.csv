@@ -37,7 +37,7 @@ cover.1506862824.git.martin.agren@gmail.com,[PATCH 00/11] various lockfile-leaks
 20170711220408.173269-1-bmwill@google.com,[PATCH 0/3] Convert grep to recurse in-process,1,68,7,2017-07-11 22:04:05,21,8,11,4,12,10,5,4,3
 20170423213453.253425-1-sandals@crustytoothpaste.net,[PATCH 00/53] object_id part 8,1,67,7,2017-04-23 21:34:00,4,4,2,2,55,2,1,1,1
 20170530173109.54904-1-bmwill@google.com,[PATCH 00/33] object id conversion (grep and diff),1,66,6,2017-05-30 17:30:36,48,6,5,2,35,3,2,2,2
-20170808012554.186051-1-bmwill@google.com,[RFC] clang-format: outline the git project's coding style,0,64,11,2017-08-08 01:25:54,51,11,9,3,4,4,3,2,2
+20170808012554.186051-1-bmwill@google.com,[RFC] clang-format: outline the git project's coding style,1,64,11,2017-08-08 01:25:54,51,11,9,3,4,4,3,2,2
 cover.1502780343.git.martin.agren@gmail.com,[PATCH/RFC 0/5] Some ThreadSanitizer-results,1,64,11,2017-08-15 12:53:00,22,9,12,3,9,5,4,3,3
 20170620075523.26961-1-chriscool@tuxfamily.org,[RFC/PATCH v4 00/49] Add initial experimental external ODB support,1,64,4,2017-06-20 07:54:34,87,5,2,2,52,3,1,1,1
 20170630000710.10601-1-sbeller@google.com,[PATCH 00/25] Reroll of sb/diff-color-moved.,1,63,3,2017-06-30 00:06:45,0,5,2,2,26,26,1,1,1
@@ -65,7 +65,7 @@ cover.1498200513.git.mhagger@alum.mit.edu,[PATCH v2 00/29] Create a reference ba
 0102015c5146c8ca-e5144538-326b-47b8-8c81-af31da4cdfe0-000000@eu-west-1.amazonses.com,[PATCH/RFC] branch: add tests for new copy branch feature,1,49,5,2017-05-28 22:56:52,21,9,10,3,6,5,3,3,3
 20171005205443.206900-1-jameson.miller81@gmail.com,[PATCH 0/6] Teach Status options around showing ignored files,1,49,4,2017-10-05 20:54:37,25,5,6,4,11,6,5,5,4
 20170916080731.13925-1-chriscool@tuxfamily.org,[PATCH v6 00/40] Add initial experimental external ODB support,1,49,3,2017-09-16 08:06:51,17,6,2,2,41,2,1,1,1
-20170404025438.bgxz5sfmrawqswcj@sigill.intra.peff.net,[RFC] dropping support for ancient versions of curl,0,48,13,2017-04-04 02:54:38,10,10,9,3,7,4,3,2,2
+20170404025438.bgxz5sfmrawqswcj@sigill.intra.peff.net,[RFC] dropping support for ancient versions of curl,1,48,13,2017-04-04 02:54:38,10,10,9,3,7,4,3,2,2
 20170509182042.28389-1-jonathantanmy@google.com,[PATCH] fetch-pack: always allow fetching of literal SHA1s,1,48,9,2017-05-09 18:20:42,6,8,9,3,8,3,3,2,2
 20170809120024.7phdjzjv54uv5dpz@sigill.intra.peff.net,[PATCH 0/4] dropping support for older curl,1,48,8,2017-08-09 12:00:25,14,14,9,3,5,3,3,3,2
 20170419170513.16475-1-pc44800@gmail.com,[GSoC][RFC/PATCH] submodule: port subcommand foreach from shell to C,0,48,7,2017-04-19 17:05:13,47,24,10,3,3,3,3,2,2
@@ -74,7 +74,7 @@ cover.1498200513.git.mhagger@alum.mit.edu,[PATCH v2 00/29] Create a reference ba
 20170515110557.11913-1-szeder.dev@gmail.com,[PATCHv3 0/4] clone: respect configured fetch respecs during initial fetch,1,48,5,2017-05-15 11:05:53,88,15,11,3,5,3,3,2,2
 20171121080059.32304-1-newren@gmail.com,[PATCH v3 00/33] Add directory rename detection to git,1,48,5,2017-11-21 08:00:26,4,4,2,2,35,2,1,1,1
 20170124003729.j4ygjcgypdq7hceg@sigill.intra.peff.net,[PATCH 0/12] reducing resource usage of for_each_alternate_ref,1,48,5,2017-01-24 00:37:29,15,5,3,2,14,11,2,1,1
-20171020171839.4188-1-bmwill@google.com,[RFC] protocol version 2,0,47,8,2017-10-20 17:18:39,53,6,4,2,15,5,2,2,1
+20171020171839.4188-1-bmwill@google.com,[RFC] protocol version 2,1,47,8,2017-10-20 17:18:39,53,6,4,2,15,5,2,2,1
 20170925095452.66833-1-dstolee@microsoft.com,[PATCH v2 0/5] Improve abbreviation disambiguation,1,47,5,2017-09-25 09:54:47,14,9,7,2,11,2,2,2,2
 20171027222853.180981-1-bmwill@google.com,[PATCH 0/3] convert diff flags to be stored in a struct,1,47,4,2017-10-27 22:28:50,4,6,8,3,10,6,5,3,3
 CAKKM46tHq13XiW5C8sux3=PZ1VHSu_npG8ExfWwcPD7rkZkyRQ@mail.gmail.com,Compile Error v2.13.2 on Solaris SPARC,0,47,4,2017-06-26 07:32:24,9,11,8,3,6,5,3,3,3
@@ -98,7 +98,7 @@ cover.1490966385.git.mhagger@alum.mit.edu,[PATCH v2 00/20] Separate `ref_cache` 
 cover.1498933362.git.mhagger@alum.mit.edu,[PATCH v3 00/30] Create a reference backend for packed refs,1,42,5,2017-07-01 18:30:38,26,8,2,2,31,3,1,1,1
 CAEY4ZpO2G-kTmuReE5gwKpftFqLfAqdpQwCK4R+qYbogCgGtUA@mail.gmail.com,What happened to git status --color=(always|auto|never)?,0,42,4,2017-10-09 23:58:46,8,23,6,2,4,2,2,2,2
 20170513231509.7834-1-avarab@gmail.com,[PATCH v2 00/29] Easy to review grep & pre-PCRE changes,1,42,2,2017-05-13 23:14:40,2,4,1,1,30,1,1,1,1
-20170518232134.163059-1-bmwill@google.com,[WIP/RFC 00/23] repository object,0,41,11,2017-05-18 23:21:11,11,5,2,2,29,2,1,1,1
+20170518232134.163059-1-bmwill@google.com,[WIP/RFC 00/23] repository object,1,41,11,2017-05-18 23:21:11,11,5,2,2,29,2,1,1,1
 20170503162931.30721-1-jn.avila@free.fr,[PATCH 1/4] usability: don't ask questions if no reply is required,1,41,10,2017-05-03 16:29:28,11,6,6,3,7,4,3,2,2
 20170122225724.19360-1-cornelius.weig@tngtech.com,[PATCH 0/7] completion bash: add more options and commands,1,41,9,2017-01-22 22:57:17,10,15,4,2,8,3,2,2,1
 xmqqo9ulo1yn.fsf@gitster.mtv.corp.google.com,"What's cooking in git.git (May 2017, #06; Mon, 22)",0,41,8,2017-05-22 06:11:28,8,9,6,3,13,3,3,2,2
@@ -158,7 +158,7 @@ cover.1496951503.git.johannes.schindelin@gmx.de,"[PATCH v2 0/8] Avoid problem wh
 cover.1506952571.git.johannes.schindelin@gmx.de,"[PATCH 0/3] for-each-ref: add :remote-ref and :remote-name
  specifiers",1,32,3,2017-10-02 13:56:32,36,7,6,3,5,4,4,2,2
 20170525194535.9324-1-avarab@gmail.com,[PATCH v4 00/31] Easy to review grep & pre-PCRE changes,1,32,1,2017-05-25 19:45:04,0,1,1,1,31,0,0,0,0
-20170824225328.8174-1-bmwill@google.com,[RFC 0/7] transitioning to protocol v2,0,31,8,2017-08-24 22:53:21,8,6,4,2,9,3,2,2,1
+20170824225328.8174-1-bmwill@google.com,[RFC 0/7] transitioning to protocol v2,1,31,8,2017-08-24 22:53:21,8,6,4,2,9,3,2,2,1
 20171211155023.1405-1-lars.schneider@autodesk.com,[PATCH v1] convert: add support for 'encoding' attribute,1,31,8,2017-12-11 15:50:23,17,10,5,3,4,4,3,2,2
 20171129143752.60553-1-lars.schneider@autodesk.com,[PATCH v4 0/2] launch_editor(): indicate that Git waits for user input,1,31,7,2017-11-29 14:37:50,5,11,8,2,3,3,2,2,2
 cover.1494027001.git.jonathantanmy@google.com,[PATCH 0/3] Clarify interaction between signed pushes and push options,1,31,7,2017-05-05 23:46:41,3,7,10,3,5,3,3,2,2
@@ -174,8 +174,8 @@ CALiLy7pBvyqA+NjTZHOK9t0AFGYbwqwRVD3sZjUg0ZLx5y1h3A@mail.gmail.com,Bring togethe
 CACi5S_1j46SbP7cQMdUnULmgGD7xBkSUrS2PKbzq8ZydybHE=w@mail.gmail.com,[BUG] add_again() off-by-one error in custom format,0,30,5,2017-06-12 03:13:16,12,18,4,2,2,2,2,2,1
 20170518201333.13088-1-benpeart@microsoft.com,[PATCH v2 0/6] Fast git status via a file system watcher,1,30,5,2017-05-18 20:13:27,12,7,5,2,7,2,2,2,2
 20171005200049.GF30301@hank,"[RFC] deprecate git stash save?  (was: Re: [PATCH 2/3] http-push:
- fix construction of hex value from path)",0,30,4,2017-10-05 20:00:49,17,8,5,2,6,4,2,2,2
-cover.1485381677.git.jonathantanmy@google.com,[RFC 00/14] Allow fetch-pack to send ref names (globs allowed),0,30,4,2017-01-25 22:02:53,28,6,1,1,17,1,1,1,1
+ fix construction of hex value from path)",1,30,4,2017-10-05 20:00:49,17,8,5,2,6,4,2,2,2
+cover.1485381677.git.jonathantanmy@google.com,[RFC 00/14] Allow fetch-pack to send ref names (globs allowed),1,30,4,2017-01-25 22:02:53,28,6,1,1,17,1,1,1,1
 20170713145553.3epnsw23zajwg3ee@sigill.intra.peff.net,[PATCH 0/15] making user-format colors conditional on config/tty,1,30,3,2017-07-13 14:55:53,0,6,2,2,17,2,1,1,1
 cover.1502491372.git.jonathantanmy@google.com,[RFC PATCH 0/3] Fixes to diff --color-moved MIN_BLOCK_LENGTH handling,1,30,3,2017-08-11 22:49:13,4,5,5,3,7,4,3,3,2
 20170328194255.vf7nfzzmmzxsbn36@sigill.intra.peff.net,[PATCH 0/18] snprintf cleanups,1,30,2,2017-03-28 19:42:56,20,6,1,1,20,1,1,1,1
@@ -220,7 +220,7 @@ CAEcERAz3vYekvJ8SM1FfdAVsP3LMVqA1O3yoJVThvg-0fPtVCg@mail.gmail.com,groups of fil
 xmqqmv2ykvy4.fsf@gitster.mtv.corp.google.com,"What's cooking in git.git (Dec 2017, #01; Mon, 4)",0,26,9,2017-12-04 21:46:43,18,7,6,2,4,3,2,2,2
 20170608005535.13080-1-joel@teichroeb.net,[PATCH v4 0/5] Implement git stash as a builtin command,1,26,8,2017-06-08 00:55:30,19,6,3,2,6,4,2,1,1
 8998e832-f49f-4de4-eb8d-a7934fba97b5@gmail.com,"[SCRIPT/RFC 0/3] git-commit --onto-parent (three-way merge, no
- working tree file changes)",0,26,7,2017-11-26 22:35:36,14,18,3,2,5,2,2,1,1
+ working tree file changes)",1,26,7,2017-11-26 22:35:36,14,18,3,2,5,2,2,1,1
 20171005104407.65948-1-lars.schneider@autodesk.com,[PATCH v1 0/2] fix temporary garbage in the cache entry,1,26,5,2017-10-05 10:44:05,4,12,4,2,3,2,2,2,1
 20170629011334.11173-1-sbeller@google.com,[PATCH 0/2] Introduce data field in hashmap and migrate docs to header,1,26,5,2017-06-29 01:13:32,6,6,6,3,3,3,3,2,2
 CANxXvsMbpBOSRKaAi8iVUikfxtQp=kofZ60N0pHXs+R+q1k3_Q@mail.gmail.com,How hard would it be to implement sparse fetching/pulling?,0,26,4,2017-11-30 03:16:45,5,10,7,2,3,2,2,2,2
@@ -241,7 +241,7 @@ cover.1487071883.git.johannes.schindelin@gmx.de,"[PATCH 0/5] A series of perform
 20171208002447.20261-1-sbeller@google.com,[PATCH 0/1] diffcore-blobfind,1,25,5,2017-12-08 00:24:46,19,12,5,2,2,2,2,2,2
 20171120202607.tf2pvegqe35mhxjs@sigill.intra.peff.net,[PATCH 0/5] avoiding pointless pack-directory re-scans,1,25,4,2017-11-20 20:26:07,4,8,2,2,5,3,1,1,1
 20171128201818.4132-1-rabel@robertabel.eu,git-prompt: fix reading files with windows line endings,0,25,4,2017-11-28 20:18:17,7,17,2,2,3,2,1,1,1
-357e8afb-4814-c950-1530-530bb6dd5f5a@suse.de,[RFC] cover-at-tip,0,25,3,2017-11-10 10:24:44,6,11,2,2,5,2,1,1,1
+357e8afb-4814-c950-1530-530bb6dd5f5a@suse.de,[RFC] cover-at-tip,1,25,3,2017-11-10 10:24:44,6,11,2,2,5,2,1,1,1
 20170101191847.564741-1-sandals@crustytoothpaste.net,[PATCH 00/17] object_id part 6,1,25,3,2017-01-01 19:18:30,0,5,1,1,18,1,1,1,1
 cover.1483719289.git.mhagger@alum.mit.edu,[PATCH v4 00/23] Delete directories left empty after ref deletion,1,25,3,2017-01-06 16:22:20,0,1,1,1,24,0,0,0,0
 20170202085007.21418-1-pclouds@gmail.com,[PATCH 00/11] nd/worktree-move update,1,25,3,2017-02-02 08:49:56,2,12,2,2,12,2,1,1,1
@@ -303,11 +303,11 @@ cover.1509382976.git.johannes.schindelin@gmx.de,[PATCH 0/3] mingw: introduce a w
 20171219222636.216001-1-sbeller@google.com,[PATCH 0/5] Fix --recurse-submodules for submodule worktree changes,1,22,3,2017-12-19 22:26:31,8,6,3,2,6,5,2,1,1
 20170420212345.7408-1-avarab@gmail.com,[PATCH v3 00/18] PCRE v1 improvements & PCRE v2 support,1,22,3,2017-04-20 21:23:27,0,3,1,1,18,1,1,1,0
 20170602191010.16834-1-szeder.dev@gmail.com,"[PATCH 0/3] Use skip_prefix() in handle_revision_{,pseudo_}opt()",1,22,3,2017-06-02 19:10:07,10,8,4,2,7,4,2,2,1
-ab866314-608b-eaca-b335-12cffe165526@morey-chaisemartin.com,[RFC 0/3] imap-send curl tunnelling support,0,21,8,2017-08-09 14:43:26,15,8,3,2,5,2,2,1,1
+ab866314-608b-eaca-b335-12cffe165526@morey-chaisemartin.com,[RFC 0/3] imap-send curl tunnelling support,1,21,8,2017-08-09 14:43:26,15,8,3,2,5,2,2,1,1
 CACpkpxn4zSdUMT-i6XWBR77sQTpr5-vudbLVTCs1_hiv7a2t_w@mail.gmail.com,"[PATCH 1/2] refs: Add for_each_worktree_ref for iterating over all
  worktree HEADs",1,21,7,2017-05-17 00:07:39,8,11,4,2,3,2,2,2,1
-20170119150347.3484-1-stefanha@redhat.com,[RFC 0/2] grep: make output consistent with revision syntax,0,21,7,2017-01-19 15:03:45,5,7,3,2,3,2,2,1,1
-20171009214543.12986-1-me@ikke.info,[RFC] column: show auto columns when pager is active,0,21,6,2017-10-09 21:45:43,14,5,4,2,4,2,2,2,1
+20170119150347.3484-1-stefanha@redhat.com,[RFC 0/2] grep: make output consistent with revision syntax,1,21,7,2017-01-19 15:03:45,5,7,3,2,3,2,2,1,1
+20171009214543.12986-1-me@ikke.info,[RFC] column: show auto columns when pager is active,1,21,6,2017-10-09 21:45:43,14,5,4,2,4,2,2,2,1
 20170122024156.284180-1-sandals@crustytoothpaste.net,[PATCH v2 0/7] Macros for Asciidoctor support,1,21,6,2017-01-22 02:41:49,4,8,2,2,9,2,1,1,1
 20170117233723.23897-1-santiago@nyu.edu,[PATCH v6 0/6] Add --format to tag verification,1,21,5,2017-01-17 23:37:17,1,7,5,2,7,3,2,2,2
 20170504220043.25702-1-avarab@gmail.com,[PATCH 0/7] Update the compat/regex engine from upstream,1,21,5,2017-05-04 22:00:36,10,7,2,2,9,2,1,1,1
@@ -387,7 +387,7 @@ cover.1483373021.git.johannes.schindelin@gmx.de,[PATCH 0/2] Fix the documentatio
 20170925000213.rilmsczdbi3jqkta@hopa.kiewit.dartmouth.edu,BUG: merge -s theirs  is not in effect (does the same as -s ours),0,18,3,2017-09-25 00:02:13,95,11,1,1,2,1,1,1,1
 1486752926-12020-1-git-send-email-kannan.siddharth12@gmail.com,[PATCH 0/2 v3] WIP: allow - as a shorthand for previous branch,1,18,3,2017-02-10 18:55:24,3,7,4,2,3,2,2,2,1
 xmqqzic7sy2g.fsf@gitster.mtv.corp.google.com,[ANNOUNCE] Git v2.14.0-rc0,0,18,3,2017-07-13 23:43:03,7,5,3,2,7,2,2,1,1
-20170505195334.121856-1-bmwill@google.com,[RFC 00/14] convert dir.c to take an index parameter,0,18,3,2017-05-05 19:53:20,2,3,1,1,15,1,1,0,0
+20170505195334.121856-1-bmwill@google.com,[RFC 00/14] convert dir.c to take an index parameter,1,18,3,2017-05-05 19:53:20,2,3,1,1,15,1,1,0,0
 20171121152533.3793-1-kaartic.sivaraam@gmail.com,[PATCH] rebase: rebasing can also be done when HEAD is detached,1,18,2,2017-11-21 15:25:33,24,7,3,2,5,3,2,1,1
 20170628005651.8110-1-sbeller@google.com,[PATCH 0/6] Fixing up sb/diff-color-moved,1,18,2,2017-06-28 00:56:45,1,5,2,2,6,2,1,1,1
 20170612221408.173876-1-bmwill@google.com,[PATCH 00/17] convert ls-files internals to pass around an index,1,18,1,2017-06-12 22:13:51,0,1,1,1,17,0,0,0,0
@@ -419,7 +419,7 @@ cover.1500043436.git.johannes.schindelin@gmx.de,[PATCH v6 00/10] The final build
 1486747828.17272.5.camel@mattmccutchen.net,"[PATCH] fetch: print an error when declining to request an
  unadvertised object",1,17,2,2017-02-10 17:26:33,11,8,3,2,4,4,2,1,1
 20170324184059.5374-1-avarab@gmail.com,[PATCH v4 00/16] Various changes to the tag command & related,1,17,1,2017-03-24 18:40:43,0,1,1,1,16,0,0,0,0
-cd784a4e-ee99-564e-81de-9f7f6cc26c67@gmx.net,[RFC] stash --continue,0,16,6,2017-01-15 23:56:00,4,9,4,2,3,2,2,2,1
+cd784a4e-ee99-564e-81de-9f7f6cc26c67@gmx.net,[RFC] stash --continue,1,16,6,2017-01-15 23:56:00,4,9,4,2,3,2,2,2,1
 20170815173611.2267-1-chriscool@tuxfamily.org,[PATCH] sub-process: print the cmd when a capability is unsupported,1,16,6,2017-08-15 17:36:11,2,8,3,2,3,2,2,1,1
 CANuW5x0pBwfQeha50mxN8pVQKm67u_b3UKTCQ8ZbJA6FUGvYbw@mail.gmail.com,[Git 2.13.0] BUG: setup_git_env called without repository,0,16,6,2017-05-12 14:19:59,2,7,3,2,3,3,2,1,1
 robbat2-20170225T185056-448272755Z@orbis-terrarum.net,git-clone --config order & fetching extra refs during initial clone,0,16,6,2017-02-25 19:12:38,72,11,3,2,2,2,2,1,1
@@ -434,7 +434,7 @@ CAHNyMp8xeye8EvtOdrX34QVCDsBCu3aLQVdyGRTVqyHXjZ4FFQ@mail.gmail.com,"fatal: bad n
 20170602103330.25663-1-avarab@gmail.com,[PATCH] perf: work around the tested repo having an index.lock,1,16,4,2017-06-02 10:33:30,2,7,3,2,3,3,2,1,1
 20170110014542.19352-1-sbeller@google.com,[RFC/PATCH 0/4] working tree operations: support superprefix,1,16,4,2017-01-10 01:45:38,2,5,2,2,4,2,1,1,1
 20170407192357.948-1-kewillf@microsoft.com,[PATCH 0/3] fix working directory file issues while using sparse-checkout,1,16,4,2017-04-07 19:23:54,9,7,3,2,4,2,2,1,1
-274B4850-2EB7-4BFA-A42C-25A573254969@gmail.com,[RFC] Indicate that Git waits for user input via editor,0,16,4,2017-11-15 15:08:23,3,5,3,2,3,2,2,1,1
+274B4850-2EB7-4BFA-A42C-25A573254969@gmail.com,[RFC] Indicate that Git waits for user input via editor,1,16,4,2017-11-15 15:08:23,3,5,3,2,3,2,2,1,1
 20170405173809.3098-1-git@jeffhostetler.com,[PATCH v5 0/4] read-cache: speed up add_index_entry,1,16,4,2017-04-05 17:38:05,1,4,2,2,4,2,1,1,1
 20171116180743.61353-1-git@jeffhostetler.com,[PATCH v4 0/6] Partial clone part 1: object filtering,1,16,4,2017-11-16 18:07:37,1,7,1,1,6,1,1,1,1
 20171113210745.24638-1-tmz@pobox.com,[PATCH] t/lib-gpg: fix gpgconf stderr redirect to /dev/null,1,16,4,2017-11-13 21:07:45,2,8,2,2,2,2,1,1,1
@@ -463,7 +463,7 @@ xmqqfudcgryb.fsf@gitster.mtv.corp.google.com,"What's cooking in git.git (Jul 201
 073f00fa11930a3607e34828e7563e1b2dc27d2a.1506709551.git.johannes.schindelin@gmx.de,[PATCH] clang-format: adjust line break penalties,1,15,6,2017-09-29 18:26:44,3,7,4,2,3,2,2,2,1
 295981e7-d2e9-d3db-e32d-8dd80ca47136@suse.cz,[PATCH 1/2] Fix nonnull errors reported by UBSAN with GCC 7.,1,15,6,2017-04-06 08:02:22,10,10,2,2,4,2,1,1,1
 20170828202829.3056-1-kewillf@microsoft.com,[PATCH 0/3] merge-recursive: replace string_list with hashmap,1,15,5,2017-08-28 20:28:26,8,4,5,2,3,3,2,2,2
-58b783d6-c024-4491-2f88-edfb9c43c55c@morey-chaisemartin.com,[RFC] imap-send: escape backslash in password,0,15,5,2017-08-04 16:16:53,4,9,3,2,2,2,2,1,1
+58b783d6-c024-4491-2f88-edfb9c43c55c@morey-chaisemartin.com,[RFC] imap-send: escape backslash in password,1,15,5,2017-08-04 16:16:53,4,9,3,2,2,2,2,1,1
 4d2a1852-8c84-2869-78ad-3c863f6dcaf7@gmail.com,Delta compression not so effective,0,15,5,2017-03-01 13:51:18,5,8,3,2,3,2,2,1,1
 20171202170220.10073-1-second.payre@gmail.com,[PATCH] send-email: extract email-parsing code into a subroutine,1,15,5,2017-12-02 17:02:20,6,8,4,2,4,2,2,2,1
 20170409022128.21337-1-danny@dannysauer.com,[PATCH] Make git log work for git CWD outside of work tree,1,15,5,2017-04-09 02:21:28,8,12,2,2,2,2,1,1,1
@@ -536,7 +536,7 @@ CAME+mvU_8-S4AhTtMYm1L6PK81v23wu4EuB+EnOgkDhi=jo9Rg@mail.gmail.com,[GSoC] Update
 20170419224053.8920-1-avarab@gmail.com,[PATCH v2 00/13] PCRE v1 improvements & PCRE v2 support,1,14,1,2017-04-19 22:40:40,0,1,1,1,13,0,0,0,0
 CANYiYbGHBDGMEjbrvX_ayXkXkciT3GgL4seM_X1NmWtud2upcg@mail.gmail.com,[L10N] Kickoff of translation for Git 2.15.0 round 1,0,13,20,2017-10-08 07:38:04,2,10,2,2,2,2,1,1,1
 CA+B9myHRahTd+FDgzK5AhXW+hq_Y_czMX9X6MXYBcr9WSPeiDw@mail.gmail.com,Feature Request: Show status of the stash in git status command,0,13,8,2017-06-07 22:46:18,5,9,1,1,2,1,1,1,1
-20170113155253.1644-1-benpeart@microsoft.com,[RFC] Add support for downloading blobs on demand,0,13,7,2017-01-13 15:52:53,40,6,2,2,2,2,1,1,1
+20170113155253.1644-1-benpeart@microsoft.com,[RFC] Add support for downloading blobs on demand,1,13,7,2017-01-13 15:52:53,40,6,2,2,2,2,1,1,1
 xmqqr2tl40pl.fsf@gitster.mtv.corp.google.com,"What's cooking in git.git (Oct 2017, #07; Mon, 30)",0,13,7,2017-10-30 06:19:18,2,7,1,1,4,1,1,1,1
 xmqqshj34ldr.fsf@gitster.mtv.corp.google.com,"What's cooking in git.git (Jun 2017, #04; Tue, 13)",0,13,7,2017-06-13 21:40:16,1,7,2,2,3,2,1,1,1
 CAH8yC8=i33rtopVt=sgg0k+P4JQO+1EVpPJ+u5CPGEXKvZ+PBA@mail.gmail.com,Please fix the useless email prompts,0,13,7,2017-08-19 15:10:23,4,9,3,2,2,2,2,1,1
@@ -700,7 +700,7 @@ fad6ea92-0a44-de30-48e8-09e7c567cd4d@web.de,t1503 broken ?,0,11,3,2017-03-25 10:
 20171208152716.64232-1-git@jeffhostetler.com,[PATCH v7 00/10] Partial clone part 2: fsck and promisors,1,11,1,2017-12-08 15:27:06,0,1,1,1,10,0,0,0,0
 20171006061434.Horde.16MqZ-fejqXm6BLpL7prK1K@crashcourse.ca,is there a truly compelling rationale for .git/info/exclude?,0,10,7,2017-10-06 10:14:34,6,5,2,2,3,3,1,1,1
 CANOj2JG5VuDtS30PfOrZ=4q8pTv_frY7=p+0g=UW3yV6ev+1KQ@mail.gmail.com,Request re git status,0,10,7,2017-02-06 23:35:33,1,6,1,1,3,1,1,1,1
-20170115183051.3565-1-wsa@the-dreams.de,[RFC for GIT] pull-request: add praise to people doing QA,0,10,6,2017-01-15 18:30:51,4,6,2,2,2,2,1,1,1
+20170115183051.3565-1-wsa@the-dreams.de,[RFC for GIT] pull-request: add praise to people doing QA,1,10,6,2017-01-15 18:30:51,4,6,2,2,2,2,1,1,1
 63F1AEE13FAE864586D589C671A6E18B0CFBF7@MX203CL03.corp.emc.com,git work trees,0,10,6,2017-04-11 15:14:57,12,4,3,2,2,2,2,1,1
 CAPZ477MCsBsfbqKzp69MT_brwz-0aes6twJofQrhizUBV7ZoeA@mail.gmail.com,"persistent-https, url insteadof, and `git submodule`",0,10,6,2017-05-19 19:57:12,12,7,1,1,2,1,1,1,1
 4026bc3b-2999-9daf-d6ab-10c6d007b1e7@web.de,"[PATCH] strbuf: support long paths w/o read rights in strbuf_getcwd()
@@ -736,7 +736,7 @@ CAH8yC8kpKii+FNZEUqDqLcuEWBsTTnrqMHq_3VLdAzcpDSKFww@mail.gmail.com,Can't locate 
 cover.1500021526.git.johannes.schindelin@gmx.de,[PATCH 0/2] Fix regression: CamelCased aliases,1,10,4,2017-07-14 08:39:24,0,7,1,1,3,1,1,1,1
 1497278015.7302.13.camel@gmail.com,Small issue with add untracked option of 'git add -i',0,10,3,2017-06-12 14:33:35,9,5,2,2,3,2,1,1,1
 17c46229-3b64-34f1-30fa-d40b77e1c054@gmail.com,"[RFC] Git rerere and non-conflicting changes during conflict
- resolution",0,10,3,2017-07-25 15:09:55,2,5,3,2,2,2,2,1,1
+ resolution",1,10,3,2017-07-25 15:09:55,2,5,3,2,2,2,2,1,1
 CAEVs+za9do_wXC12SSRznF9v9oGw3_Grq2EFDVf8nH1CRgM-Qw@mail.gmail.com,[Bug] commit-tree shouldn't append an extra newline to commit messages,0,10,3,2017-09-01 18:58:52,5,7,2,2,2,2,1,1,1
 CAFBGMVPBwxeSXCTcoBdxDbYtJo-38w=tf4T6-rNWuys=3drP+A@mail.gmail.com,Bug with git submodule update + subrepo with differing path/name?,0,10,3,2017-12-18 23:18:24,2,9,0,1,1,1,1,1,1
 CA+dhYEX+GgEHnVBnLQqnNW99xpf9kWcataTTt3Ya6ivGFgscMw@mail.gmail.com,CYGWIN git cannot install python packages with pip,0,10,3,2017-05-02 18:08:17,13,7,1,1,3,1,1,1,1
@@ -786,7 +786,7 @@ trinity-9f703269-6f73-4f6d-b90b-45e09e1c094c-1489582854278@3capp-gmx-bs66,Commit
 20171013175157.13634-1-ralf.thielow@gmail.com,[PATCH] sequencer.c: unify error messages,1,9,5,2017-10-13 17:51:57,2,5,1,1,3,1,1,1,1
 CAJo=hJvxWg2J-yRiCK3szux=eYM2ThjT0KWo-SFFOOc1RkxXzg@mail.gmail.com,Re: reftable [v3]: new ref storage format,0,9,5,2017-07-22 18:29:17,6,4,1,1,3,1,1,1,1
 7c3db153-2a56-f27d-af71-e4b61f1252a1@ramsayjones.plus.com,Unexpected pass for t6120-describe.sh on cygwin,0,9,5,2017-09-09 13:13:32,3,3,2,2,3,2,1,1,1
-20170304191901.9622-1-markbt@efaref.net,[RFC 0/4] Shallow clones with on-demand fetch,0,9,5,2017-03-04 19:18:57,2,2,1,1,6,1,1,0,0
+20170304191901.9622-1-markbt@efaref.net,[RFC 0/4] Shallow clones with on-demand fetch,1,9,5,2017-03-04 19:18:57,2,2,1,1,6,1,1,0,0
 20170323170233.50499-1-bmwill@google.com,[PATCH] sequencer: fix missing newline,1,9,5,2017-03-23 17:02:33,0,4,2,2,3,2,1,1,1
 148971018136.2144.12683278043600094739@richardiv.omgwallhack.org,Shared repositories no longer securable against privilege escalation,0,9,5,2017-03-17 00:23:01,1,4,2,2,3,2,1,1,1
 20170901144931.26114-1-me@ikke.info,[PATCH] doc/for-each-ref: explicitly specify option names,1,9,5,2017-09-01 14:49:31,10,3,2,2,5,2,1,0,0
@@ -807,7 +807,7 @@ CAKwvOdn9j=_Ob=xq4ucN6Ar1G537zNiU9ox4iF6o1qO7kPY41A@mail.gmail.com,fuzzy patch a
 20171003211409.16037-1-sbeller@google.com,[PATCH] branch: reset instead of release a strbuf,1,9,4,2017-10-03 21:14:09,0,6,2,2,2,2,1,1,1
 xmqqr2tygvp4.fsf@gitster.mtv.corp.google.com,[ANNOUNCE] Git v2.15.0-rc2,0,9,4,2017-10-20 06:49:43,8,5,2,2,2,2,1,1,1
 20170129002932.GA19359@dismay.proulx.com,git-daemon shallow checkout fail,0,9,4,2017-01-29 00:29:32,9,6,1,1,2,1,1,1,1
-20170511193753.19594-1-jonathantanmy@google.com,[RFC] send-email: support validate hook,0,9,4,2017-05-11 19:37:53,3,3,1,1,4,1,1,1,1
+20170511193753.19594-1-jonathantanmy@google.com,[RFC] send-email: support validate hook,1,9,4,2017-05-11 19:37:53,3,3,1,1,4,1,1,1,1
 xmqqshjk5ezb.fsf@gitster.mtv.corp.google.com,"What's cooking in git.git (Jun 2017, #01; Thu, 1)",0,9,4,2017-06-01 07:44:40,14,6,1,1,2,1,1,1,1
 20171208192636.13678-1-git@jeffhostetler.com,[PATCH] Partial clone design document,1,9,4,2017-12-08 19:26:35,6,5,2,2,2,2,1,1,1
 20171109195810.30446-1-alexmv@dropbox.com,"[PATCH 0/2] fsmonitor: Stop reading from PWD, write fsmonitor+split index right",1,9,4,2017-11-09 19:58:08,36,4,2,2,2,2,1,1,1
@@ -834,7 +834,7 @@ f5d4c8e7bceb410a95a34a8cce4c31dd@deutsche-boerse.com,difftool uses hardcoded per
 20170323153839.24283-1-szeder.dev@gmail.com,[PATCH 0/3] completion: updates to ctags symbol names,1,9,3,2017-03-23 15:38:36,8,4,1,1,3,1,1,1,1
 1492607652-36341-1-git-send-email-bnmvco@gmail.com,[PATCH v10 0/5] [GSoC] remove_subtree(): reimplement using iterators,1,9,3,2017-04-19 13:14:07,0,2,2,2,6,2,0,0,0
 CAKepmajNz7TP_Z6p_Wj17tOpiMOpKkvQOBvVthBkEiKabAppjg@mail.gmail.com,Trying to use xfuncname without success.,0,9,3,2017-02-07 19:21:13,1,7,1,1,2,1,1,1,1
-20170507233512.GA9332@HP,[RFC] Add warning when git discard changes on another branch?,0,9,2,2017-05-07 23:35:14,0,7,1,1,2,1,1,1,1
+20170507233512.GA9332@HP,[RFC] Add warning when git discard changes on another branch?,1,9,2,2017-05-07 23:35:14,0,7,1,1,2,1,1,1,1
 20170401153049.21400-1-robert.stanca7@gmail.com,[PATCH 1/2] [GSOC] Convert signed flags to unsigned,1,9,2,2017-04-01 15:30:48,1,6,1,1,2,1,1,1,1
 20170313201104.GA32821@workstation,Possible git blame bug?,0,9,2,2017-03-13 20:11:04,0,7,1,1,2,1,1,1,1
 20170121215912.246691-1-sandals@crustytoothpaste.net,[PATCH 0/7] Macro for Asciidoctor support,1,9,2,2017-01-21 21:59:05,0,2,1,1,7,1,0,0,0
@@ -843,7 +843,7 @@ CAKepmajNz7TP_Z6p_Wj17tOpiMOpKkvQOBvVthBkEiKabAppjg@mail.gmail.com,Trying to use
 1513600223353.28799@arris.com,Fetching commit instead of ref,0,8,6,2017-12-18 12:30:23,4,5,1,1,3,1,1,1,1
 20170324113747.44991-1-larsxschneider@gmail.com,[PATCH v2] travis-ci: build and test Git on Windows,1,8,6,2017-03-24 11:37:47,5,4,2,2,3,2,1,1,0
 20170806233850.14711-1-avarab@gmail.com,"[PATCH] tests: don't give unportable > to test built-in, use -gt",1,8,6,2017-08-06 23:38:50,0,3,2,2,4,2,1,0,0
-20170115142542.11999-1-t.gummerer@gmail.com,[RFC] stash: support filename argument,0,8,6,2017-01-15 14:25:42,1,3,2,2,3,2,1,1,0
+20170115142542.11999-1-t.gummerer@gmail.com,[RFC] stash: support filename argument,1,8,6,2017-01-15 14:25:42,1,3,2,2,3,2,1,1,0
 CADoxLGPFgF7W4XJzt0X+xFJDoN6RmfFGx_96MO9GPSSOjDK0EQ@mail.gmail.com,Git clonebundles,0,8,6,2017-01-31 07:00:34,8,6,1,1,2,1,1,1,1
 20171117160759.6397-1-daniel.bensoussan--bohm@etu.univ-lyon1.fr,[PATCH 1/2] Documentation about triangular workflow,1,8,5,2017-11-17 16:07:58,4,2,1,1,4,1,1,1,0
 CAPUVn2u0Uos2mT5+4ejj8m0okNK6XwerL6ce2miHfhtuEs-ZnQ@mail.gmail.com,Bug with .gitignore and branch switching,0,8,5,2017-03-17 20:42:35,0,3,3,2,3,2,2,0,0
@@ -1019,7 +1019,7 @@ CACBZZX7NDa5o1xSu4HgZ4=kG3mx3U6ja7f3E4yAkFOHDsLdMjA@mail.gmail.com,How do I copy
 20170714161220.9565-1-ralf.thielow@gmail.com,[PATCH] l10n: de.po: update German translation,1,7,3,2017-07-14 16:12:20,7,5,1,1,2,1,1,1,1
 20170705170324.21026-1-kaarticsivaraam91196@gmail.com,[PATCH] comment: fix a typo in the comment,1,7,3,2017-07-05 17:03:24,1,5,1,1,2,1,1,1,1
 20171220221725.129162-1-sbeller@google.com,[PATCHv2 0/4] Fix --recurse-submodules for submodule worktree changes,1,7,3,2017-12-20 22:17:21,1,2,1,1,4,1,1,0,0
-alpine.DEB.2.10.1710051625430.812@alexmv-linux,[RFC] Reporting index properties,0,7,3,2017-10-05 23:39:20,0,4,1,1,2,1,1,1,1
+alpine.DEB.2.10.1710051625430.812@alexmv-linux,[RFC] Reporting index properties,1,7,3,2017-10-05 23:39:20,0,4,1,1,2,1,1,1,1
 20171121141852.551-1-kaartic.sivaraam@gmail.com,[PATCH v2 4/4] builtin/branch: strip refs/heads/ using skip_prefix,1,7,3,2017-11-21 14:18:52,1,5,1,1,2,1,1,1,1
 828c6333-0ba0-2a01-324e-f910a8042ca1@morey-chaisemartin.com,[PATCH v4 0/4] imap-send: Fix and enable curl by default,1,7,2,2017-09-14 07:50:52,0,2,2,2,4,2,0,0,0
 20170414191230.52825-1-git@jeffhostetler.com,[PATCH v10 0/3] read-cache: speed up add_index_entry,1,7,2,2017-04-14 19:12:27,3,4,1,1,3,1,1,1,0
@@ -1053,7 +1053,7 @@ DA0A42D68346B1469147552440A645039A9C56D4@ORSMSX115.amr.corp.intel.com,git commit
 CAN0Skmmjd5Y0uWz_WC69mAStucZ6nR0mjdp4-ODJz2UnTaB-eQ@mail.gmail.com,feature request: user email config per domain,0,6,5,2017-02-22 13:12:02,1,2,1,1,4,1,0,0,0
 db0580dc-3ce0-47ba-b82a-b1e50b9d0a3a@nsinfo.co.rs,Bug report,0,6,5,2017-08-30 21:25:00,2,3,2,2,2,2,1,0,0
 0102015f310e24b9-b96378f3-a029-4110-80dd-e454522e2cb7-000000@eu-west-1.amazonses.com,[PATCH] use filetest pragma to work with ACL,1,6,5,2017-10-18 19:55:31,5,4,1,1,2,1,1,1,0
-xmqqshlxckr2.fsf@gitster.mtv.corp.google.com,[RFC] should these two topics graduate to 'master' soon?,0,6,5,2017-03-28 18:35:29,2,3,1,1,3,1,1,0,0
+xmqqshlxckr2.fsf@gitster.mtv.corp.google.com,[RFC] should these two topics graduate to 'master' soon?,1,6,5,2017-03-28 18:35:29,2,3,1,1,3,1,1,0,0
 20170324054631.21622-1-alexhenrie24@gmail.com,"[PATCH v2] log: if --decorate is not given, default to --decorate=auto",1,6,5,2017-03-24 05:46:31,6,4,1,1,2,1,1,1,0
 xmqq4lv57ypx.fsf@gitster.mtv.corp.google.com,"What's cooking in git.git (Jun 2017, #07; Sat, 24)",0,6,5,2017-06-24 23:25:13,1,4,1,1,2,1,1,1,0
 20170709102506.GA32425@kumabox,Fetching new refs gets progressively slower,0,6,5,2017-07-09 10:25:06,39,4,1,1,2,1,1,1,0
@@ -1172,7 +1172,7 @@ CACx-yZ10GiDT=dDeF1EUtM_K4nGd414SDfxLRqGWyXt0ub02Gg@mail.gmail.com,git describe 
 CAH8yC8kOj5a5PN4V7mj7xZPoNDr-MH-CkirxRKyfx1-qAvfpqQ@mail.gmail.com,git-compat-util.h:735:13: error: conflicting types for 'inet_ntop',0,6,2,2017-03-29 09:19:17,1,4,1,1,2,1,1,1,0
 1494907234-28903-1-git-send-email-bnmvco@gmail.com,[PATCH v2 0/4] Port git-add--interactive.perl:status_cmd to C,1,6,2,2017-05-16 04:00:30,0,2,1,1,4,1,0,0,0
 0102015c5166284d-d8dd6534-a8d5-452d-af14-d827934ef593-000000@eu-west-1.amazonses.com,[PATCH] pull: ff --rebase --autostash works in dirty repo,1,6,2,2017-05-28 23:31:08,3,3,2,2,2,2,1,0,0
-cover.1491851452.git.jonathantanmy@google.com,[RFC 0/4] Implementation of fetch-blobs and fetch-refs,0,6,2,2017-04-10 20:46:06,81,1,1,1,5,0,0,0,0
+cover.1491851452.git.jonathantanmy@google.com,[RFC 0/4] Implementation of fetch-blobs and fetch-refs,1,6,2,2017-04-10 20:46:06,81,1,1,1,5,0,0,0,0
 20170406134508.31711-1-git@jeffhostetler.com,[PATCH v3 0/2] string-list: use ALLOC_GROW macro when reallocing,1,6,2,2017-04-06 13:45:06,0,4,1,1,2,1,1,1,0
 alpine.DEB.2.20.1702021007460.3496@virtualbox,Google Doc about the Contributors' Summit,0,6,2,2017-02-02 09:08:47,13,4,1,1,2,1,1,1,0
 20170820154720.32259-1-larsxschneider@gmail.com,[PATCH v1] convert: display progress for filtered objects that have been delayed,1,6,2,2017-08-20 15:47:20,44,4,1,1,2,1,1,1,0
@@ -1220,7 +1220,7 @@ xmqqvarjz5yv.fsf@gitster.mtv.corp.google.com,"What's cooking in git.git (Mar 201
 20170209020222.23642-1-dturner@twosigma.com,[PATCH] gc: ignore old gc.log files,1,5,4,2017-02-09 02:02:22,0,3,1,1,2,1,1,0,0
 20171005200227.8028-1-johannes.schindelin@gmx.de,[ANNOUNCE] Git for Windows 2.14.2(2),0,5,4,2017-10-05 20:02:27,7,3,1,1,2,1,1,0,0
 CABURp0pf=4BE=E7qeOmYAcqJb=qDeGJ1EFyfCf+hDtKjjMD=ng@mail.gmail.com,git-push branch confusion caused by user mistake,0,5,4,2017-03-10 21:44:30,2,3,1,1,2,1,1,0,0
-44fd4dce451fb0783de02c0a8c4a14aa.squirrel@mail.jessiehernandez.com,[RFC][Git GUI] Make Commit message field in git GUI re sizable.,0,5,4,2017-02-22 09:27:05,0,4,0,1,1,1,1,1,0
+44fd4dce451fb0783de02c0a8c4a14aa.squirrel@mail.jessiehernandez.com,[RFC][Git GUI] Make Commit message field in git GUI re sizable.,1,5,4,2017-02-22 09:27:05,0,4,0,1,1,1,1,1,0
 10319c47ff3f7222c3a601827ebd9398861d509d.1485363528.git.johannes.schindelin@gmx.de,[PATCH] Retire the `relink` command,1,5,4,2017-01-25 16:58:57,0,2,1,1,2,1,1,0,0
 1498070489.32360.14.camel@gmail.com,Using '--help' for aliases,0,5,4,2017-06-21 18:41:29,2,3,1,1,2,1,1,0,0
 1497961141-3144-1-git-send-email-miguel.torroja@gmail.com,[PATCH] git-p4: changelist template with p4 -G change -o,1,5,4,2017-06-20 12:19:01,4,3,1,1,2,1,1,0,0
@@ -1290,7 +1290,7 @@ CAPMsMoAYpS8QMrfyed5=XPWJLbV6=kMg5gp-2a75kWMpVD3D1A@mail.gmail.com,[BUG] Failed 
 406769a31421cb26a0e1bcf6e15bcf7ab48617c8.1507798709.git.wking@tremily.us,[PATCH] Documentation/merge-options.txt: Add -S/--gpg-sign,1,5,3,2017-10-12 09:02:17,0,3,1,1,2,1,1,0,0
 0102015e8e4f7e75-dfec22a3-bb1a-4208-a069-450275d52b6d-000000@eu-west-1.amazonses.com,[PATCH] doc: update information about windows build,1,5,3,2017-09-17 05:28:48,2,4,0,1,1,1,1,1,0
 20171005211203.11913-1-tmz@pobox.com,[PATCH] api-argv-array.txt: Update link to string-list API,1,5,3,2017-10-05 21:12:03,0,4,0,1,1,1,1,1,0
-1485713194-11782-1-git-send-email-schumacher@kde.org,[RFC] Proof of concept: Support multiple authors,0,5,3,2017-01-29 18:06:34,1,3,1,1,2,1,1,0,0
+1485713194-11782-1-git-send-email-schumacher@kde.org,[RFC] Proof of concept: Support multiple authors,1,5,3,2017-01-29 18:06:34,1,3,1,1,2,1,1,0,0
 ab9b5c63-ca38-6157-6732-78aa5d5f291f@gmail.com,Meaning of two commit-ish hash in git diff,0,5,3,2017-10-31 03:24:22,0,4,0,1,1,1,1,1,0
 14e804c6-0798-8bbd-b182-66c3cd2b870c@vaisala.com,Behavior of 'git fetch' for commit hashes,0,5,3,2017-06-19 12:09:28,0,3,1,1,2,1,1,0,0
 ygf8tiyx480.fsf@tehran.isnogud.escape.de,[PATCH] git svn fetch: Create correct commit timestamp when using --localtime,1,5,3,2017-08-05 00:12:15,3,4,0,1,1,1,1,1,0
@@ -1319,7 +1319,7 @@ AC260BC2-FED8-4811-9F5D-220EF1DAAA53@gmail.com,Should I store large text files o
 CAKkAvazj28RR1nHEWNNeZeyE6mpkb3opk6kvrxP6Lau6tcCbJQ@mail.gmail.com,[PATCH] fix revisions doc about quoting for ':/' notation,1,5,3,2017-08-16 03:21:10,1,3,1,1,2,1,1,0,0
 cdedf063-5f53-04c9-5ac0-2acf7e26696e@smarthead.ru,Git credential helper store flushes randomly,0,5,3,2017-05-12 08:05:19,0,4,0,1,1,1,1,1,0
 20170917142416.30685-1-max@max630.net,[PATCH] describe: teach --match to handle branches and remotes,1,5,3,2017-09-17 14:24:16,2,3,1,1,2,1,1,0,0
-77c0182b-8c4f-9727-f56f-d8e2bad8146d@tngtech.com,[RFC] mailmap.blob overrides default .mailmap,0,5,3,2017-02-07 11:56:00,1,4,0,1,1,1,1,1,0
+77c0182b-8c4f-9727-f56f-d8e2bad8146d@tngtech.com,[RFC] mailmap.blob overrides default .mailmap,1,5,3,2017-02-07 11:56:00,1,4,0,1,1,1,1,1,0
 1503215489.5824.4.camel@gmail.com,"Git *accepts* a branch name, it can't identity in the future?",0,5,3,2017-08-20 07:51:29,0,2,1,1,2,1,1,0,0
 000801d33ea7$04a7c240$0df746c0$@nexbridge.com,[Question] Documenting platform implications on CVE to git,0,5,2,2017-10-06 13:28:32,0,4,0,1,1,1,1,1,0
 20170113235427.5768-1-sbeller@google.com,[PATCH] transport submodules: correct error message,1,5,2,2017-01-13 23:54:27,4,4,0,1,1,1,1,1,0
@@ -1394,7 +1394,7 @@ CAAD4mYi24dHNhG1MFkPaeVv9P-9UN_FxSvZmX6XFHrfA7K0hoQ@mail.gmail.com,[bug] Git sub
 f11120c3-30fb-bdfe-a597-8ceb41097209@gmx.de,Small typo in german translation,0,4,4,2017-07-10 06:47:23,0,2,1,1,2,1,0,0,
 17f2724d-7001-203e-f0b5-cf586703a41a@boxbox.org,core.sshCommand and url.*.insteadOf for submodules,0,4,4,2017-01-05 10:09:55,0,3,0,1,1,1,1,0,
 xmqqh91vqquf.fsf@gitster.mtv.corp.google.com,"What's cooking in git.git (Apr 2017, #01; Tue, 11)",0,4,4,2017-04-11 08:40:56,0,2,1,1,2,1,0,0,
-a660460d-b294-5113-bfaf-d98bcf99bad5@gmail.com,[RFC] 'unsigned long' to 'size_t' conversion,0,4,4,2017-12-06 15:08:23,0,1,1,1,3,0,0,0,
+a660460d-b294-5113-bfaf-d98bcf99bad5@gmail.com,[RFC] 'unsigned long' to 'size_t' conversion,1,4,4,2017-12-06 15:08:23,0,1,1,1,3,0,0,0,
 1505679467-20720-1-git-send-email-bugosip@gmail.com,[PATCH] pack: make packed_git_mru global a value instead of a pointer,1,4,4,2017-09-17 20:17:47,0,3,0,1,1,1,1,0,
 20171223150215.8615-1-wsy@dogben.com,[RFC PATCH v2] http: support CURLPROXY_HTTPS,1,4,4,2017-12-23 15:02:15,4,2,1,1,2,1,0,0,
 alpine.LFD.2.21.1711100855140.3617@DESKTOP-1GPMCEJ,is there a stylistic preference for a trailing -- on a command?,0,4,4,2017-11-10 13:57:45,1,3,0,1,1,1,1,0,
@@ -1477,7 +1477,7 @@ a9da4416-6437-a491-f461-c5e61d805b2d@riseup.net,gpg verify git sub modules usefu
 20171005051104.Horde.8J0J7-XC6jD4AOgtYrou3Na@crashcourse.ca,couple questions about git logical variables and git var,0,4,3,2017-10-05 09:11:04,0,3,0,1,1,1,1,0,
 20171013164415.6632-1-asottile@umich.edu,[PATCH] diff: alias -q to --quiet,1,4,3,2017-10-13 16:44:15,3,3,0,1,1,1,1,0,
 alpine.LFD.2.21.1711140324580.12112@localhost.localdomain,some apparent inaccuracies in man git-worktree,0,4,3,2017-11-14 08:43:48,7,3,0,1,1,1,1,0,
-20170116224022.GA8539@jessie.local,[BUG/RFC] Git Gui: GIT_DIR leaks to spawned Git Bash,0,4,3,2017-01-16 22:40:22,1,3,0,1,1,1,1,0,
+20170116224022.GA8539@jessie.local,[BUG/RFC] Git Gui: GIT_DIR leaks to spawned Git Bash,1,4,3,2017-01-16 22:40:22,1,3,0,1,1,1,1,0,
 135C7A92C7D64E488B830ADC2970C70132AE6407@SVGEA-EMAIL.gea.fr,Could GIT manage revision headers embedded in code ?,0,4,3,2017-05-02 11:48:35,0,2,1,1,2,1,0,0,
 1486218663-31820-1-git-send-email-kannan.siddharth12@gmail.com,[PATCH v3] parse-remote: remove reference to unused op_prep,1,4,3,2017-02-04 14:31:03,2,3,0,1,1,1,1,0,
 CAC2JkrLm3QCNW1t-Yju-sA=9Tbv8hH1AHZUEDux8kSG9mkG5wg@mail.gmail.com,Can I remove multiple stashed states at a time?,0,4,3,2017-10-13 02:58:12,1,3,0,1,1,1,1,0,
@@ -1534,7 +1534,7 @@ CAGSZTjLmYCyKZ1BBRv+JVYq4oX7EQcNzyxAnS_3NBUPjr3g8zQ@mail.gmail.com,feature reque
 20170808151808.GA32640@dinwoodie.org,t3700 broken on pu on Cygwin,0,4,2,2017-08-08 15:18:08,0,3,0,1,1,1,1,0,
 20170207133850.14056-1-pclouds@gmail.com,[PATCH] rev-list-options.txt: update --all about detached HEAD,1,4,2,2017-02-07 13:38:49,1,2,1,1,2,1,0,0,
 20170429184822.10128-1-larsxschneider@gmail.com,[PATCH v1] travis-ci: retry if Git for Windows CI returns HTTP error 502 or 503,1,4,2,2017-04-29 18:48:22,2,3,0,1,1,1,1,0,
-20170212003432.GA19519@starla,[RFC] send-email: avoid duplicate In-Reply-To and References headers,0,4,2,2017-02-12 00:34:32,0,3,0,1,1,1,1,0,
+20170212003432.GA19519@starla,[RFC] send-email: avoid duplicate In-Reply-To and References headers,1,4,2,2017-02-12 00:34:32,0,3,0,1,1,1,1,0,
 20171208001424.81712-1-jonathantanmy@google.com,[PATCH] decorate: clean up and document API,1,4,2,2017-12-08 00:14:24,7,3,0,1,1,1,1,0,
 1clZj4-0006vN-9q@crossperf.com,[PATCH] diff: allow - as a short-hand for last branch,1,4,2,2017-03-08 09:50:53,1,3,0,1,1,1,1,0,
 20170112082138.GJ4426@acme.spoerlein.net,git fast-import crashing on big imports,0,4,2,2017-01-12 08:21:38,6,3,0,1,1,1,1,0,
@@ -1749,7 +1749,7 @@ alpine.LFD.2.21.1711210925530.6795@DESKTOP-1GPMCEJ,pedantry: is there a standard
 20171208151807.3569-1-daniel.bensoussan--bohm@etu.univ-lyon1.fr,[PATCH] doc: reword gitworflows for neutrality,1,3,2,2017-12-08 15:18:07,1,2,0,1,1,1,0,,
 20171214211909.55868-1-git@jeffhostetler.com,[PATCH v7] Partial clone part 1: object filtering,1,3,2,2017-12-14 21:19:08,0,2,0,1,1,1,0,,
 20170213203835.vssj64tcvuq35dny@sigill.intra.peff.net,[PATCH] docs/gitremote-helpers: fix unbalanced quotes,1,3,2,2017-02-13 20:38:35,0,2,0,1,1,1,0,,
-87mv7kf369.fsf@waller.obbligato.org,[RFC] Moving main git-subtree development. to GitHub,0,3,2,2017-08-01 02:10:54,0,1,1,1,2,0,0,,
+87mv7kf369.fsf@waller.obbligato.org,[RFC] Moving main git-subtree development. to GitHub,1,3,2,2017-08-01 02:10:54,0,1,1,1,2,0,0,,
 ygfd19stua3.fsf@tehran.isnogud.escape.de,Migration from CVS to Git looses merges,0,3,2,2017-06-25 07:12:52,0,2,0,1,1,1,0,,
 20170505100803.13238-1-avarab@gmail.com,[PATCH] doc: replace a couple of broken gmane links,1,3,2,2017-05-05 10:08:03,2,2,0,1,1,1,0,,
 1505220449.27800.23.camel@gmail.com,"Buffered value should be shown when requesting username for remote
@@ -1837,7 +1837,7 @@ alpine.LFD.2.21.1711110528410.4314@localhost.localdomain,[PATCH v2] bisect: ment
 CAL21BmnycG4=Wm_e1S85QVPfs3vV_Q=TAjTAG-sv+f2mK6wbBQ@mail.gmail.com,Rewrite cat-file.c : need help to find a bug,0,3,2,2017-12-29 10:05:50,0,2,0,1,1,1,0,,
 xmqqfugbbzto.fsf@gitster.mtv.corp.google.com,https://travis-ci.org/git/git/builds/,0,3,2,2017-05-11 07:46:43,0,2,0,1,1,1,0,,
 20170121144245.31702-1-larsxschneider@gmail.com,[PATCH v1] travis-ci: fix Perforce install on macOS,1,3,2,2017-01-21 14:42:45,2,2,0,1,1,1,0,,
-20171108144253.34428-1-benpeart@microsoft.com,[RFC] fastindex: parallelize index load,0,3,2,2017-11-08 14:42:53,0,1,1,1,2,0,0,,
+20171108144253.34428-1-benpeart@microsoft.com,[RFC] fastindex: parallelize index load,1,3,2,2017-11-08 14:42:53,0,1,1,1,2,0,0,,
 CAFTSPUV1E+jCMHzx+rq9Y1agthxcYrzDVY-rThTNCG7BfnPeTg@mail.gmail.com,"Trying to use insteadOf trick to use different SSH keys for separate
  github accounts - not working",0,3,2,2017-12-16 07:50:02,0,2,0,1,1,1,0,,
 20171211134409.13339-1-g3orge.app@gmail.com,[PATCH] builtin/tag.c: return appropriate value when --points-at finds an empty list,1,3,2,2017-12-11 13:44:09,0,2,0,1,1,1,0,,
@@ -1850,7 +1850,7 @@ CAEY4ZpMJbS+-xDKcwbOHCWxAdjOVuTN9DFJNHVqHw0r06CwKJg@mail.gmail.com,Should git su
 CAEDDsWdXQ1+UukvbfRoTPzY3Y9sOaxQ7nh+qL_Mcuy3=XKKh7w@mail.gmail.com,"Problem with environment of hook execution when git is run with
  --work-tree / --git-dir",0,3,2,2017-11-26 07:19:25,0,2,0,1,1,1,0,,
 868tm6w5bz.fsf@local.lan,[noob] is this normal behavior,0,3,2,2017-05-09 13:02:56,1,2,0,1,1,1,0,,
-20170121135545.gi6crct66msylhpr@sigill.intra.peff.net,[RFC] what content should go in https://git-scm.com/doc/ext,0,3,2,2017-01-21 13:55:45,4,2,0,1,1,1,0,,
+20170121135545.gi6crct66msylhpr@sigill.intra.peff.net,[RFC] what content should go in https://git-scm.com/doc/ext,1,3,2,2017-01-21 13:55:45,4,2,0,1,1,1,0,,
 xmqqk27791ws.fsf@gitster.mtv.corp.google.com,"What's cooking in git.git (Mar 2017, #12; Wed, 29)",0,3,2,2017-03-29 22:02:59,5,1,1,1,2,0,0,,
 CACHUE0-MyuL+8wvt1BeKMtxNUdg7AK0bDAg4BSeoj5aHjLARMQ@mail.gmail.com,[Bug] Unicode display,0,3,2,2017-03-15 04:51:12,0,2,0,1,1,1,0,,
 12228342.8FuY78Fyzc@kicer,broken text encoding in commit author name,0,3,2,2017-04-08 20:30:55,1,2,0,1,1,1,0,,
@@ -1874,7 +1874,7 @@ CAOc6etZ9QeJAf1CKh9Eraigwy45yR6eO-7Th+bZRnTa71BoPew@mail.gmail.com,Does it make 
  creating",0,3,2,2017-05-29 11:20:32,0,2,0,1,1,1,0,,
 CALZVapk4zxn-DSdMdy2q-Z0KvsBvx4MCSB5UDVOaBrBvAqw_AA@mail.gmail.com,Git branch deletion not based on HEAD branch anymore,0,3,2,2017-04-06 20:31:55,0,2,0,1,1,1,0,,
 alpine.LFD.2.21.1711110838060.9569@localhost.localdomain,[PATCH v3] bisect: mention view as an alternative to visualize,1,3,2,2017-11-11 13:39:47,0,2,0,1,1,1,0,,
-CAEA2_RLvjRDytE03hfe84TTqvCQm324BXV=GvTU3UVqNWJUXiQ@mail.gmail.com,[RFC] [GSoC] Port git-add--interactive.perl:status_cmd to C,0,3,2,2017-05-01 22:46:59,0,2,0,1,1,1,0,,
+CAEA2_RLvjRDytE03hfe84TTqvCQm324BXV=GvTU3UVqNWJUXiQ@mail.gmail.com,[RFC] [GSoC] Port git-add--interactive.perl:status_cmd to C,1,3,2,2017-05-01 22:46:59,0,2,0,1,1,1,0,,
 788230417.115707.1507584541605@ox.hosteurope.de,"Branch switching with submodules where the submodule replaces a
  folder aborts unexpectedly",0,3,2,2017-10-09 21:29:01,2,2,0,1,1,1,0,,
 504cafe3-2960-af2d-10fe-51e8ba3d2213@web.de,[PATCH] http: use internal argv_array of struct child_process,1,3,2,2017-12-22 08:14:02,0,2,0,1,1,1,0,,
@@ -2009,7 +2009,7 @@ CABURp0ryBtLALEnzRdoeYeUUdrzBxiT3+yTvW6B=vpqMG3p1Rw@mail.gmail.com,diff --color-
 05e6903d-336d-23df-a4be-13c4030c6c82@gmail.com,How to find the cause of 'git push' stopping on 'Writing objects'?,0,2,2,2017-03-11 11:55:37,0,1,0,1,1,0,,,
 20171129014559.32755-1-newren@gmail.com,[PATCH] strbuf: Remove unused stripspace function alias,1,2,2,2017-11-29 01:45:59,0,1,0,1,1,0,,,
 CAJo=hJum2boTfcXOaZVhxmbGB9Dygoc5=TM8RD2nqxo-Ahjv9g@mail.gmail.com,Re: reftable [v6]: new ref storage format,0,2,2,2017-08-15 22:47:56,2,1,0,1,1,0,,,
-CACx-yZ3VAaPQ4dU40_JFm_=WGH5ZX-28bXKqGqVnj39-6_9duw@mail.gmail.com,[RFC] Prepend tags/ when describing tags with embedded name,0,2,2,2017-12-23 14:17:30,4,1,0,1,1,0,,,
+CACx-yZ3VAaPQ4dU40_JFm_=WGH5ZX-28bXKqGqVnj39-6_9duw@mail.gmail.com,[RFC] Prepend tags/ when describing tags with embedded name,1,2,2,2017-12-23 14:17:30,4,1,0,1,1,0,,,
 CACYWVif=zSiXpqVL0td+Mgu-Wz=AzDL50kREcXJY2Dtf_4_y_g@mail.gmail.com,submodule using revision,0,2,2,2017-11-03 13:42:23,0,1,0,1,1,0,,,
 CA+dhYEWV4TWp_-sVoGCK-r14JSKsS3_Q7tfwjmowRr5V_F7BZA@mail.gmail.com,Unconventional roles of git,0,2,2,2017-02-26 11:51:57,1,1,0,1,1,0,,,
 8dc95372-979c-e8e5-5df8-1f4025ab0db5@yandex.ru,Encoding issue in git gui,0,2,2,2017-01-06 08:59:17,0,1,0,1,1,0,,,
@@ -2171,7 +2171,7 @@ alpine.LFD.2.21.1711120430580.30032@localhost.localdomain,more pedantry ... what
 1505936846-2195-1-git-send-email-martin.agren@gmail.com,[PATCH] commit: fix memory leak in `prepare_index()`,1,2,2,2017-09-20 19:47:23,0,1,0,1,1,0,,,
 0102015b853681c6-2fb6f9ce-28dc-4ca8-82de-d5fbff10d3af-000000@eu-west-1.amazonses.com,[PATCH] gitmodules: clarify what history depth a shallow clone has,1,2,2,2017-04-19 07:56:33,0,1,0,1,1,0,,,
 CAOUWSGC3z990x_Oehh5=R7jV2no63FGwVyArT9z3pp4zpBzxWg@mail.gmail.com,Missing git-2.13.1.* files in the SHA256 sums,0,2,2,2017-06-07 21:00:31,4,1,0,1,1,0,,,
-EC270E42-9431-446C-96F9-E1A0C3E45333@gmail.com,[RFC] Subtle differences in passing configs to git clone,0,2,2,2017-02-21 11:36:25,0,1,0,1,1,0,,,
+EC270E42-9431-446C-96F9-E1A0C3E45333@gmail.com,[RFC] Subtle differences in passing configs to git clone,1,2,2,2017-02-21 11:36:25,0,1,0,1,1,0,,,
 34910856-7DE9-41A0-A7A6-B572B1C88C1F@gmail.com,git reset,0,2,2,2017-08-16 12:21:46,0,1,0,1,1,0,,,
 20171119110132.folfzddhdorb6wqd@debian-dorm,[PATCH] git-pull: Pass -4/-6 option to git-fetch,1,2,2,2017-11-19 11:01:32,1,1,0,1,1,0,,,
 20170328221810.GA3240@hashpling.org,Git hackathon New York / London - call for mentors,0,2,2,2017-03-28 22:18:10,0,1,0,1,1,0,,,
@@ -2282,7 +2282,7 @@ CA+vHbJL5QMmtzRjQ8tV9Ntrh8=2bspPLeu=34RVFeDTVUhEuWw@mail.gmail.com,"File names a
 1493075048-6665-1-git-send-email-miguel.torroja@gmail.com,[PATCH 1/2] fast-export: deletion action first,1,2,1,2017-04-24 23:04:07,0,1,0,1,1,0,,,
 6d65267a-1811-8c25-dd59-98fa5ef19655@gmx.de,[PATCH] gitk: different color for boundary commits,1,2,1,2017-07-29 10:21:54,26,1,0,1,1,0,,,
 20170124021046.30735-1-eantoranz@gmail.com,[PATCH] [draft]blame: add --aggregate option,1,2,1,2017-01-24 02:10:46,0,1,0,1,1,0,,,
-CAAj3zPzwWr4u1qSMp5CwVMzExW2eg9LQ7t7RX-5m6fRRGh9pcA@mail.gmail.com,[RFC] - url-safe base64 commit-id's,0,2,1,2017-02-28 02:27:49,0,1,0,1,1,0,,,
+CAAj3zPzwWr4u1qSMp5CwVMzExW2eg9LQ7t7RX-5m6fRRGh9pcA@mail.gmail.com,[RFC] - url-safe base64 commit-id's,1,2,1,2017-02-28 02:27:49,0,1,0,1,1,0,,,
 20171221110614.29300-1-luke@diamand.org,[PATCH 0/1] git-p4: update multiple shelved change lists,1,2,1,2017-12-21 11:06:13,0,1,0,1,1,0,,,
 CAA6PgK74CTT09RZiQWGoih3x6B5G4tLa_Vz7e9BDNW4+TGdLXw@mail.gmail.com,"`make profile-fast` fails with error: No $GIT_PERF_REPO defined, and
  your build directory is not a repo",0,2,1,2017-07-19 10:16:02,0,1,0,1,1,0,,,
@@ -2460,7 +2460,7 @@ xmqq4m0cry60.fsf@gitster.mtv.corp.google.com,"What's cooking in git.git (Feb 201
 xmqqd15umbmw.fsf@gitster.mtv.corp.google.com,"What's cooking in git.git (Oct 2017, #02; Wed, 11)",0,1,1,2017-10-11 06:39:19,0,0,0,0,0,,,,
 CAP8UFD3fK5SYmyKjR7TQ=TyiMy3DovHDvgD9cBfpm1L+tU5AEw@mail.gmail.com,Draft of Git Rev News edition 28,0,1,1,2017-06-12 07:03:13,0,0,0,0,0,,,,
 xmqqbmu9ka3s.fsf@gitster.mtv.corp.google.com,[ANNOUNCE] Git v2.12.0-rc1,0,1,1,2017-02-10 21:29:59,0,0,0,0,0,,,,
-20170324103723.GA7324@salo,[RFC] A Notedb Standard,0,1,1,2017-03-24 10:37:23,0,0,0,0,0,,,,
+20170324103723.GA7324@salo,[RFC] A Notedb Standard,1,1,1,2017-03-24 10:37:23,0,0,0,0,0,,,,
 20170214224631.18012-1-bernhardu@mailbox.org,[PATCH/RFC] git-gui: Fix author name encoding in Amend Last Commit.,1,1,1,2017-02-14 22:46:31,0,0,0,0,0,,,,
 20170419093314.4454-1-pclouds@gmail.com,[PATCH] split-index: add and use unshare_split_index(),1,1,1,2017-04-19 09:33:14,0,0,0,0,0,,,,
 CAFuPQ1+JwRy11-NA=pRN38GHt5Bk+KswzYNTba=JRFoZZ62byA@mail.gmail.com,[ANNOUNCE] tig-2.3.2,0,1,1,2017-12-18 22:07:15,0,0,0,0,0,,,,
@@ -2473,7 +2473,7 @@ xmqq7eufn58n.fsf@gitster.mtv.corp.google.com,"What's cooking in git.git (Nov 201
 20170113015145.12330-1-sbeller@google.com,[RFC-PATCH] lib-submodule-update.sh: define tests for recursing into submodules,1,1,1,2017-01-13 01:51:45,0,0,0,0,0,,,,
 xmqqinixz28i.fsf@gitster.mtv.corp.google.com,[ANNOUNCE] Git v2.13.3,0,1,1,2017-07-12 23:04:13,0,0,0,0,0,,,,
 xmqq1ss4ac1s.fsf@gitster.mtv.corp.google.com,[ANNOUNCE] Git v2.13.0-rc2,0,1,1,2017-05-04 15:15:11,0,0,0,0,0,,,,
-CA+CzEk9-SDj9FTC_ucu9oBDOe59ce4Jz_OxZbYrDpmbUJHTpFg@mail.gmail.com,[RFC] Converting git stash to a builtin,0,1,1,2017-03-11 20:25:57,0,0,0,0,0,,,,
+CA+CzEk9-SDj9FTC_ucu9oBDOe59ce4Jz_OxZbYrDpmbUJHTpFg@mail.gmail.com,[RFC] Converting git stash to a builtin,1,1,1,2017-03-11 20:25:57,0,0,0,0,0,,,,
 CAME+mvUCrMwqXTzCZM42ns6fffOJ+CkskRj=fBDUbjCrUn4dJA@mail.gmail.com,[GSoC] Update: Week-13,0,1,1,2017-08-15 23:04:21,0,0,0,0,0,,,,
 1494849741.3608.5.camel@sipsolutions.net,"git-send-email smtpEncryption option is case sensitive (silently
  fails if TLS is specified)",0,1,1,2017-05-15 12:02:21,0,0,0,0,0,,,,
@@ -2492,7 +2492,7 @@ ebbf93327b44e2533b9f7fee9d624d0eb03f1bc3.1513427145.git.simon@ruderich.org,[PATC
 0E82EDCE97D80143A03AE87B9DF4EB3A8A7E8CD7@Sydmail.civica.com.au,"RE: git submodule update --remote fails on non-master branches with
  shallow clones enabled",0,1,1,2017-05-24 00:37:53,0,0,0,0,0,,,,
 alpine.LFD.2.21.1711140423450.14090@localhost.localdomain,[PATCH] t: correct obvious typo 'detahced',1,1,1,2017-11-14 09:25:03,0,0,0,0,0,,,,
-CAME+mvXBuLbbRJu1DAA8o-u6DeZATKypH=W=hPEks3KL5WMX+Q@mail.gmail.com,[RFC] [GSoC] Proposal Draft for GSoC 2017 : Incremental Rewrite of git-submodules,0,1,1,2017-04-01 15:40:37,0,0,0,0,0,,,,
+CAME+mvXBuLbbRJu1DAA8o-u6DeZATKypH=W=hPEks3KL5WMX+Q@mail.gmail.com,[RFC] [GSoC] Proposal Draft for GSoC 2017 : Incremental Rewrite of git-submodules,1,1,1,2017-04-01 15:40:37,0,0,0,0,0,,,,
 20170107084843.w3psqobh4yq6t6zb@sigill.intra.peff.net,[BUG] push sometimes omits status table when remote dies,0,1,1,2017-01-07 08:48:44,0,0,0,0,0,,,,
 xmqqfuep7yq0.fsf@gitster.mtv.corp.google.com,[ANNOUNCE] Git v2.13.2,0,1,1,2017-06-24 22:44:50,0,0,0,0,0,,,,
 CABZvOEps9HvViW2bKXEUtTbzy1+UbtM_2muBBycDSwBXOTtF7Q@mail.gmail.com,"Sparse-checkout excluded files show as deleted in git status after

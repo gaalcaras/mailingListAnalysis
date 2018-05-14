@@ -106,7 +106,7 @@ def is_patch(subject):
     if pd.isnull(subject):
         return False
 
-    patch = re.compile(r'^\[[^\]]*PATCH[^\]]*\]')
+    patch = re.compile(r'\[[^\]]*(PATCH|RFC)[^\]]*\]')
 
     if patch.match(subject):
         return True
