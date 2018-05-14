@@ -215,3 +215,28 @@ generateSelect = function(options, selected='depth') {
 
   return Array.prototype.slice.call(elements.children);
 }
+
+displayToolTip = function(element) {
+  var text = '',
+      tooltip = document.getElementById('tooltip'),
+      elements = document.createDocumentFragment();
+
+  Object.keys(element.dataset).forEach((key) => {
+    var li = document.createElement('li');
+
+    li.innerHTML = key + ': ' + element.dataset[key];
+    elements.appendChild(li);
+  });
+
+  var ul = document.createElement('ul');
+  ul.appendChild(elements);
+
+  tooltip.innerHTML = null
+  tooltip.appendChild(ul);
+  tooltip.classList.remove('hidden');
+};
+
+hideToolTip = function() {
+  var tooltip = document.getElementById('tooltip');
+  tooltip.classList.add('hidden');
+}
