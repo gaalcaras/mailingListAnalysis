@@ -115,13 +115,15 @@ function Graphs(graphs) {
     var critValues = this.vars[crit].sort(sortNumbers),
         step = 0.9/critValues.length,
         seq = range(0.1, 1, step),
-        opacities = {};
+        colorArr = {},
+        colors = interpolateColors('rgb(244, 161, 66)', 'rgb(189, 22, 226)', critValues.length);
 
-    critValues.forEach((key, i) => opacities[key] = seq[i]);
+    critValues.forEach((key, i) => colorArr[key] = colors[i]);
 
     var lastValue = 0;
     this.graphsArr.forEach(function(tree) {
-      tree.style['border-bottom'] = '2px solid rgba(0, 0, 139, ' + opacities[tree.dataset[crit]] + ')';
+      color = colorArr[tree.dataset[crit]];
+      tree.style['border-bottom'] = '2px solid rgba(' + color.join(', ') + ')';
 
       if (tree.dataset[crit] != lastValue) {
         tree.dataset.label = tree.dataset[crit];
@@ -248,4 +250,29 @@ displayToolTip = function(element) {
 hideToolTip = function() {
   var tooltip = document.getElementById('tooltip');
   tooltip.classList.add('hidden');
-}
+};
+
+interpolateColor = function(color1, color2, factor) {
+    if (arguments.length < 3) { 
+        factor = 0.5; 
+    }
+    var result = color1.slice();
+    for (var i = 0; i < 3; i++) {
+        result[i] = Math.round(result[i] + factor * (color2[i] - color1[i]));
+    }
+    return result;
+};
+
+interpolateColors = function (color1, color2, steps) {
+    var stepFactor = 1 / (steps - 1),
+        interpolatedColorArray = [];
+
+    color1 = color1.match(/\d+/g).map(Number);
+    color2 = color2.match(/\d+/g).map(Number);
+
+    for(var i = 0; i < steps; i++) {
+        interpolatedColorArray.push(interpolateColor(color1, color2, stepFactor * i));
+    }
+
+    return interpolatedColorArray;
+};
