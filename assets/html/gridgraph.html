@@ -21,8 +21,6 @@
           <p>
             <label>Crit1</label>
             <select id="crit1" class="criteria" onchange="reorderGrid()"></select>
-            <label>Color</label>
-            <input id="crit1-color" type="checkbox" onchange="switchGraphDecoration(this.checked)">
           </p>
           <p>
             <label>Crit2</label>
@@ -30,6 +28,9 @@
           </p>
         </fieldset>
         <fieldset>
+          <p>
+            <label>Color</label>
+            <select id="color" onchange="switchGraphDecoration()"></select>
           <p>
           <label>Mode</label>
           <select id="mode" onchange="changeGridMode(this.value)">

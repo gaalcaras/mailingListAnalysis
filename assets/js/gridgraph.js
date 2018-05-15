@@ -1,7 +1,7 @@
 window.onload = function() {
   var graphs = new Graphs(document.querySelectorAll('.tree')),
-      grid = document.getElementById('grid'),
-      checkbox = document.getElementById('crit1-color');
+      vars = Object.keys(graphs.vars),
+      grid = document.getElementById('grid');
 
   reorderGrid = function() {
     const crit1 = document.getElementById('crit1').value,
@@ -13,8 +13,18 @@ window.onload = function() {
     updateGrid();
   };
 
-  switchGraphDecoration = function(checked) {
-    grid.classList.toggle('noBorder');
+  switchGraphDecoration = function() {
+    const colorVar = document.getElementById('color').value;
+
+    if (colorVar === 'None') {
+      grid.classList.add('noBorder');
+    } else {
+      grid.classList.remove('noBorder');
+    }
+
+    graphs.color.update(colorVar);
+
+    updateGrid();
   };
 
   changeImageSize = function(value){
@@ -36,11 +46,12 @@ window.onload = function() {
     }
   };
 
-  updateElementById('crit1', generateSelect(Object.keys(graphs.vars), 'depth'));
-  updateElementById('crit2', generateSelect(Object.keys(graphs.vars), 'star_nodes'));
+  updateElementById('crit1', generateSelect(vars, 'depth'));
+  updateElementById('crit2', generateSelect(vars, 'star_nodes'));
+  updateElementById('color', generateSelect([...vars, 'None'], 'None'));
+
   reorderGrid();
   changeImageSize(150);
-  checkbox.checked = false;
 };
 
 function range(start, end, step = 1) {
@@ -90,6 +101,10 @@ function Graphs(graphs) {
     const mode = (typeof(this.mode) !== 'undefined') ? this.mode.value : 'list';
     if (mode === 'list') {
       this.graphsArr = this.sortList(this.graphsArr);
+
+      if (typeof(this.color) !== 'undefined') {
+        this.addColor(this.color.value);
+      }
     } else {
       this.arrangeAsTable();
     }
@@ -103,7 +118,6 @@ function Graphs(graphs) {
     var elements = document.createDocumentFragment();
 
     graphsArr.sort(sortGraphs(var1, var2));
-    this.addColor(colorVar);
 
     graphsArr.forEach(function(graph) {
       elements.appendChild(graph.cloneNode(true));
@@ -112,29 +126,13 @@ function Graphs(graphs) {
     return Array.prototype.slice.call(elements.children);
   };
   this.addColor = (crit) => {
-    var critValues = this.vars[crit].sort(sortNumbers),
-        step = 0.9/critValues.length,
-        seq = range(0.1, 1, step),
-        colorArr = {},
-        colors = interpolateColors('rgb(244, 161, 66)', 'rgb(189, 22, 226)', critValues.length);
+    if (crit == 'None') { return }
 
-    critValues.forEach((key, i) => colorArr[key] = colors[i]);
-
-    var lastValue = 0;
-    this.graphsArr.forEach(function(tree) {
-      color = colorArr[tree.dataset[crit]];
-      tree.style['border-bottom'] = '2px solid rgba(' + color.join(', ') + ')';
-
-      if (tree.dataset[crit] != lastValue) {
-        tree.dataset.label = tree.dataset[crit];
-        tree.classList.add('label');
-        lastValue = tree.dataset[crit];
-      } else {
-        tree.classList.remove('label');
-        tree.dataset.label = '';
-      }
-    });
-
+    if (this.mode.value === 'list') {
+      this.graphsArr = colorGraphs(this.graphsArr, crit, this.vars[crit]);
+    } else {
+      this.arrangeAsTable();
+    }
   };
   this.changeSize = (value) => {
     this.graphsArr.forEach(function(tree) {
@@ -155,6 +153,10 @@ function Graphs(graphs) {
           trees = this.graphsArr.filter(filterGraphs(var1Name, value)),
           trees = this.sortList(trees),
           td = document.createElement('td');
+
+      if (this.color.value !== 'None') {
+        trees = colorGraphs(trees, this.color.value, this.vars[this.color.value]);
+      }
 
       td.innerHTML = value;
       tr.appendChild(td)
@@ -181,9 +183,36 @@ function Graphs(graphs) {
   // Controls
   this.var1 = new Control('depth', this.sort);
   this.var2 = new Control('star_nodes', this.sort);
+  this.color = new Control('None', this.addColor);
   this.mode = new Control('list', this.changeMode);
   this.imgSize = new Control(150, this.changeSize);
 }
+
+colorGraphs = (graphsArr, crit, values) => {
+  var critValues = values.sort(sortNumbers),
+      step = 0.9/critValues.length,
+      seq = range(0.1, 1, step),
+      colorArr = {},
+      colors = interpolateColors('rgb(244, 161, 66)', 'rgb(189, 22, 226)', critValues.length);
+
+  critValues.forEach((key, i) => colorArr[key] = colors[i]);
+
+  var lastValue = null;
+  graphsArr.forEach(function(tree) {
+    color = colorArr[tree.dataset[crit]];
+    tree.style['border-bottom'] = '2px solid rgba(' + color.join(', ') + ')';
+
+    if (tree.dataset[crit] != lastValue) {
+      tree.dataset.label = tree.dataset[crit];
+      tree.classList.add('label');
+      lastValue = tree.dataset[crit];
+    } else {
+      tree.classList.remove('label');
+    }
+  });
+
+  return graphsArr;
+};
 
 sortNumbers = function(a, b) {
   return a - b;
