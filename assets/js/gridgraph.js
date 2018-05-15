@@ -112,22 +112,31 @@ function Graphs(graphs) {
     return Array.prototype.slice.call(elements.children);
   };
   this.addColor = (crit) => {
-    var critValues = this.vars[crit].sort(),
+    var critValues = this.vars[crit].sort(sortNumbers),
         step = 0.9/critValues.length,
         seq = range(0.1, 1, step),
         opacities = {};
 
     critValues.forEach((key, i) => opacities[key] = seq[i]);
 
+    var lastValue = 0;
     this.graphsArr.forEach(function(tree) {
       tree.style['border-bottom'] = '2px solid rgba(0, 0, 139, ' + opacities[tree.dataset[crit]] + ')';
+
+      if (tree.dataset[crit] != lastValue) {
+        tree.dataset.label = tree.dataset[crit];
+        tree.classList.add('label');
+        lastValue = tree.dataset[crit];
+      } else {
+        tree.classList.remove('label');
+        tree.dataset.label = '';
+      }
     });
 
   };
   this.changeSize = (value) => {
     this.graphsArr.forEach(function(tree) {
       tree.style.width = value + 'px';
-      tree.style.height = value + 'px';
     });
   };
   this.arrangeAsTable = () => {
