@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as nmp
 import pandas as pd
 
-from tools import nth_elt, h_index, save_fig, is_patch
+from tools import nth_elt, h_index, save_fig, is_patch, gini
 
 class Thread(object):
 
@@ -21,6 +21,7 @@ class Thread(object):
             'depth',
             'star_nodes',
             'h_index',
+            'deg_gini',
             'deg_max', 'deg_max_2', 'deg_max_3', 'deg_max_4', 'deg_max_5'
             ]
 
@@ -108,6 +109,7 @@ class Thread(object):
             nx.dag_longest_path_length(self.tree), # Depth
             sum(d > 1 for d in degrees), # Star nodes
             h_index(degrees),
+            round(gini(nmp.array(degrees)), 1),
             nth_elt(degrees, 0), nth_elt(degrees, 1), nth_elt(degrees, 2), nth_elt(degrees, 3), nth_elt(degrees, 4)
         ]
 
