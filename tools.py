@@ -1,12 +1,12 @@
 import os
 import pandas as pd
-import numpy as nmp
+import numpy as np
 import math
 import re
 
 def nth_elt(elts, nth):
     """Return nth element of list of elts, nan if nth element does not exist"""
-    return elts[nth] if len(elts) >= nth + 1 else nmp.nan
+    return elts[nth] if len(elts) >= nth + 1 else np.nan
 
 def h_index(degrees):
     """Returns h-index for a given list of degrees (a thread has index h if
@@ -76,7 +76,7 @@ def rect_list(sequence):
         # Add NAN to have a full row of elements
         missing = len(result[0]) - len(row)
         print(missing)
-        row.extend([nmp.nan] * missing)
+        row.extend([np.nan] * missing)
         print(row)
 
         result.append(tuple(row))
@@ -112,3 +112,30 @@ def is_patch(subject):
         return True
 
     return False
+
+def gini(array):
+    """Calculate the Gini coefficient of a numpy array.
+    Adapted from https://github.com/oliviaguest/gini
+
+    :array: numpy array
+    """
+
+    array = array.flatten()
+    if np.amin(array) < 0:
+        # Values cannot be negative:
+        array -= np.amin(array)
+
+    # Values cannot be nan, inf or 0:
+    array = np.nan_to_num(array)
+    array = np.add(0.0000001, array, casting='unsafe')
+
+    # Values must be sorted:
+    array = np.sort(array)
+
+    # Index per array element:
+    index = np.arange(1, array.shape[0]  +1)
+
+    # Number of array elements:
+    n = array.shape[0]
+
+    return (np.sum((2 * index - n - 1) * array)) / (n * np.sum(array))
