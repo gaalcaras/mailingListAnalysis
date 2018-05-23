@@ -12,6 +12,7 @@ from sklearn.decomposition import PCA
 
 def log_norm_transform(data):
     """Returns the data after applying log and standardization it."""
+    data = np.nan_to_num(data)
     result = np.log1p(data)
     scaler = StandardScaler()
     scaler.fit(result)
