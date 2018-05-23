@@ -5,6 +5,7 @@ Perform PCA on 2017 threads.
 import pandas as pd
 import numpy as np
 from pca import ThreadPCA
+from categorize import categorize_threads
 
 threads = pd.read_csv('data/working/threads2017.csv')
 
@@ -13,6 +14,7 @@ threads['ratio'] = np.log1p(threads['depth']) / np.log1p(threads['emails'])
 
 # Remove trivial threads with no depth (they're basically one email threads)
 threads = threads[threads.depth > 0]
+threads = categorize_threads(threads)
 
 # Perform pca
 pca = ThreadPCA(threads, ['star_nodes', 'ratio', 'deg_max', 'h_index', 'deg_max_2'])
@@ -22,6 +24,7 @@ pca.scree()
 
 # Draw scatter plot (first two components), coloring threads with h_index
 pca.scatter(color='h_index')
+pca.scatter(color='category')
 
 # Draw correlation circle (first two components)
 pca.corr_circle()

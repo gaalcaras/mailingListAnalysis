@@ -63,12 +63,22 @@ class ThreadPCA(object):
         ax.spines['right'].set_color('none')
         ax.spines['top'].set_color('none')
 
+        # Preparing colors
+        color_is_qualitative = isinstance(self.data[color][0], str)
+        colorscheme = 'Spectral'
+
+        if color_is_qualitative:
+            self.data['color'] = pd.factorize(self.data[color])[0]
+            colorscheme = 'Accent'
+        else:
+            self.data['color'] = self.data[color]
+
         if color:
             scatter = plt.scatter(self.projected[:, components[0]-1],
                                   self.projected[:, components[1]-1],
                                   alpha=0.5,
-                                  c=self.data[color], edgecolor='none',
-                                  cmap=plt.cm.get_cmap('Spectral',
+                                  c=self.data.color, edgecolor='none',
+                                  cmap=plt.cm.get_cmap(colorscheme,
                                                        len(self.data[color].unique())))
 
             # Add a colorbar
@@ -77,6 +87,16 @@ class ThreadPCA(object):
             # Label the colorbar and adjust its position
             cbar.ax.set_ylabel(color, rotation=90)
             cbar.ax.get_yaxis().labelpad = 15
+
+            if color_is_qualitative:
+                # Compute tick position
+                last_tick = cbar.get_ticks()[-1]
+                tick_step = last_tick / len(self.data.color.unique())
+                delta = tick_step / 2
+                ticks = np.arange(tick_step, last_tick + tick_step, tick_step)
+
+                cbar.set_ticks(ticks - delta)
+                cbar.set_ticklabels(self.data[color].unique())
         else:
             scatter = plt.scatter(self.projected[:, components[0]-1],
                                   self.projected[:, components[1]-1],
