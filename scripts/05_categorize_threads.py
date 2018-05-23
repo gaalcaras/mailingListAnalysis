@@ -12,3 +12,5 @@ cat_count = threads.groupby('category').size().reset_index(name='count')
 cat_count = cat_count.sort_values(by = 'count', ascending=False)
 
 print(cat_count)
+
+threads.to_csv('data/working/threads2017_labeled.csv', index=False)
