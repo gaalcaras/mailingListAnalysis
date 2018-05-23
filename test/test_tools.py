@@ -55,7 +55,7 @@ def test_gini():
     test2 = np.zeros(1000)
     test2[0] = 10
 
-    test3 = np.random.uniform(-1, 0, 1000)
+    test3 = np.random.uniform(-1, 0, 100000)
 
     assert gini(np.array([1, 1, 1])) == 0
     assert round(gini(test2), 1) == 1
