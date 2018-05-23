@@ -10,6 +10,7 @@ threads = pd.read_csv('data/working/threads2017.csv')
 
 # Add new metrics to refine typology
 threads['deg_delta'] = round((np.log1p(threads['deg_max']) / np.log1p(threads['emails'])), 2)
+threads['deg_ratio'] = round((np.log1p(threads['deg_max_2']) / np.log1p(threads['deg_max'])**2), 2)
 threads['star_nodes_i'] = round((np.log1p(threads['star_nodes']) / np.log1p(threads['emails'])), 2)
 
 # Keep only threads containing 10 emails
