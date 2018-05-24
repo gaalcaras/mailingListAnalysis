@@ -1,0 +1,21 @@
+.plot-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.plot-grid .plot {
+  flex: 33%;
+  max-width: 33%;
+}
+
+.plot img {
+  max-width: 100%;
+}
+
+#scree_plot {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}

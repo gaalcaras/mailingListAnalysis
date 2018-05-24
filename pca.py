@@ -7,8 +7,10 @@ Class to perform PCA and display helpful plots to help and explain the data.
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+import itertools
 from sklearn.preprocessing import StandardScaler, FunctionTransformer
 from sklearn.decomposition import PCA
+import os
 
 from tools import save_fig
 
@@ -307,3 +309,60 @@ class ThreadPCA(object):
             table = table[[c for c in table.columns if '_t' not in c]]
 
         print(table)
+
+    def to_imgs(self, filename='pca', scatter_color=None):
+        """Output all images"""
+
+        self.name = filename
+
+        components = np.arange(1, len(self.pca.components_)+1, 1)
+        combinations = itertools.combinations(components, 2)
+
+        self.scree(save=True)
+
+        for comb in combinations:
+            self.corr_circle(components=comb, save=True)
+
+            if scatter_color:
+                self.scatter(components=comb, color=scatter_color, save=True)
+            else:
+                self.scatter(components=comb, save=True)
+
+    def to_html(self, name=None, filepath=None):
+        """Output html page with all necessary graphs and scatter plots"""
+
+        name = name if name else self.name
+        filepath = filepath if filepath else 'output/pca/{}.html'.format(name)
+
+        # Load HTML templates
+        with open('assets/html/pca.html', 'r') as temp:
+            pca_temp = temp.read()
+
+        with open('assets/html/plot.html', 'r') as temp:
+            plot_temp = temp.read()
+
+        img_path = 'assets/img/pca'
+
+        plots = { # sans svg et sans dir path
+            'scree': list(),
+            'scatter': list(),
+            'circle': list()
+        }
+
+        for plot in plots.keys():
+            pattern = '{}_{}'.format(name, plot)
+            files_name = [f.replace('.svg', '') for f in os.listdir(img_path) if pattern in f]
+            imgs = [plot_temp.format(filename=fn) for fn in sorted(files_name)]
+            plots[plot] = ''.join(imgs)
+
+        temp_info = plots
+        temp_info['name'] = self.name
+        pca_temp = pca_temp.format(**temp_info)
+
+        # Write to file
+        dirname = os.path.dirname(filepath)
+        if not os.path.isdir(dirname):
+            os.makedirs(dirname)
+
+        with open(filepath, 'w') as page:
+            page.write(pca_temp)
