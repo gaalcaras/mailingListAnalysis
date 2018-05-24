@@ -10,10 +10,12 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler, FunctionTransformer
 from sklearn.decomposition import PCA
 
+from tools import save_fig
+
 def log_norm_transform(data):
     """Returns the data after applying log and standardization it."""
     data = np.nan_to_num(data)
-    result = np.log1p(data)
+    result = np.nan_to_num(np.log1p(data))
     scaler = StandardScaler()
     scaler.fit(result)
     return scaler.transform(result)
@@ -29,6 +31,8 @@ class ThreadPCA(object):
         :dimensions: number of components returned
         """
 
+        self.name = 'pca'
+
         self.transformer = FunctionTransformer(log_norm_transform)
         self.data = data
         self.features = features
@@ -41,7 +45,7 @@ class ThreadPCA(object):
 
         self.match_data_transform()
 
-    def scatter(self, components=(1, 2), color=None, show=True):
+    def scatter(self, components=(1, 2), color=None, show=True, save=False):
         """Draw a scatter plot of points along PC axes.
 
         :components: PC numbers to be used on the x and y axes
@@ -65,14 +69,15 @@ class ThreadPCA(object):
         ax.spines['top'].set_color('none')
 
         # Preparing colors
-        color_is_qualitative = isinstance(self.data[color][0], str)
-        colorscheme = 'Spectral'
+        if color:
+            color_is_qualitative = isinstance(self.data[color][0], str)
+            colorscheme = 'Spectral'
 
-        if color_is_qualitative:
-            self.data['color'] = pd.factorize(self.data[color])[0]
-            colorscheme = 'Accent'
-        else:
-            self.data['color'] = self.data[color]
+            if color_is_qualitative:
+                self.data['color'] = pd.factorize(self.data[color])[0]
+                colorscheme = 'Accent'
+            else:
+                self.data['color'] = self.data[color]
 
         if color:
             scatter = plt.scatter(self.projected[:, components[0]-1],
@@ -118,12 +123,17 @@ class ThreadPCA(object):
         # Give the plot a title
         ax.set_title('PCA (PC{}xPC{})'.format(components[0], components[1]))
 
+        if save:
+            show = False
+            plt_name = '{}_scatter_{}x{}'.format(self.name, components[0], components[1])
+            save_fig(fig, 'assets', 'img', 'pca', plt_name)
+
         if show:
             plt.show()
 
         plt.close(fig)
 
-    def scree(self, show=True):
+    def scree(self, show=True, save=False):
         """Draw PCA's scree plot"""
 
         # Create figure
@@ -146,12 +156,17 @@ class ThreadPCA(object):
 
         ax.set_title('Scree plot')
 
+        if save:
+            show = False
+            plt_name = '{}_scree'.format(self.name)
+            save_fig(fig, 'assets', 'img', 'pca', plt_name)
+
         if show:
             plt.show(fig)
 
         plt.close(fig)
 
-    def corr_circle(self, components=(1, 2), show=True):
+    def corr_circle(self, components=(1, 2), show=True, save=False):
         """Draw a correlation circle.
 
         :components: PC numbers to be used on the x and y axis
@@ -226,6 +241,11 @@ class ThreadPCA(object):
         # Give the plot a title
         ax.set_title('Circle of correlations (PC{}xPC{})'.format(components[0],
                                                                  components[1]))
+
+        if save:
+            show = False
+            plt_name = '{}_circle_{}x{}'.format(self.name, components[0], components[1])
+            save_fig(fig, 'assets', 'img', 'pca', plt_name)
 
         if show:
             plt.show(ax)
