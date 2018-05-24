@@ -203,7 +203,7 @@ class ThreadPCA(object):
         ax.add_artist(circle1)
 
         # Get colors for each vector arrow
-        cmap = plt.cm.get_cmap('viridis', len(self.features))
+        cmap = plt.cm.get_cmap('Accent', len(self.features))
 
         for feature in range(0, len(self.features)):
             # Get coordinates of the "arrow head" along both components
