@@ -18,9 +18,9 @@ threads_e10 = threads[threads.emails == 10]
 threads_h3 = threads[threads.h_index == 3]
 
 # Build the grid of graphs
-gridgraph(threads_e10, 'output/gridgraph_17_e10.html')
-gridgraph(threads_h3, 'output/gridgraph_17_h3.html')
+gridgraph(threads_e10, '2017_emails10')
+gridgraph(threads_h3, '2017_h_index_3')
 
 for category in threads.category.unique():
     threads_subset = threads[threads.category == category]
-    gridgraph(threads_subset, 'output/gridgraph_17_{}.htm'.format(category))
+    gridgraph(threads_subset, '2017_{}'.format(category))

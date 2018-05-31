@@ -1,12 +1,15 @@
 import os
 from tqdm import tqdm
 
-def gridgraph(threads, filepath):
+def gridgraph(threads, filename=None):
     """Generate HTML grid page.
 
     :threads: dataframe with threads data
     :filepath: path of output HTML file
     """
+
+    filename = filename if filename else 'gridgraph'
+    filepath = 'output/gridgraph/{}.html'.format(filename)
 
     # Load HTML template
     with open('assets/html/gridgraph.html', 'r') as temp:
