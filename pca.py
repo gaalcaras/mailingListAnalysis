@@ -72,7 +72,7 @@ class ThreadPCA(object):
 
         # Preparing colors
         if color:
-            color_is_qualitative = isinstance(self.data[color][0], str)
+            color_is_qualitative = isinstance(self.data[color].tolist()[0], str)
             colorscheme = 'Spectral'
 
             if color_is_qualitative:
