@@ -3,6 +3,8 @@ Explore how basic thread categories interact with other thread variables.
 """
 
 import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 threads = pd.read_csv('data/working/threads2017_labeled.csv')
 
@@ -16,3 +18,8 @@ for var in var_cross:
 threads_bycat = threads.groupby('category', as_index=False)
 results = threads_bycat.agg(agg_form)
 print(results)
+
+for var in var_cross:
+    ax = sns.boxplot(x='category', y=var,
+                     data=threads[['category', var]], palette='Set3')
+    plt.show(ax)
