@@ -2,4 +2,6 @@ assets/img/*
 !assets/img/gridgraph.png
 output
 data/working/*
+data/raw/*
 !data/working/threads2017.csv
+upload.sh
